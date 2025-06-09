@@ -1,0 +1,278 @@
+/* Glassmorphism dashboard styles for CodeQuest */
+
+:root {
+  --primary: #1F2937;
+  --secondary: #9CA3AF;
+  --accent: #2d2e2f;
+
+  --neon: #00f2fe;
+  --neon-pink: #ed21fa;
+  --neon-red: #fb3640;
+  --neon-green: #3fffa8;
+  --glassy-bg: rgba(31, 41, 55, 0.45);
+  --frosted-bg: rgba(156, 163, 175, 0.1);
+  --blur: 18px;
+  --dark-bg: #181a20;
+  --border: rgba(255,255,255,0.13);
+  --shadow: 0 8px 24px 0 rgba(0,0,0,0.14);
+  --card-radius: 1.6rem;
+  --font-title: 'Inter Tight', 'Segoe UI', Arial, sans-serif;
+}
+.app-background {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--primary), var(--secondary) 100%);
+  color: #f1f3fa;
+  font-family: var(--font-title);
+  transition: background 0.3s;
+}
+
+/* Dark mode overrides */
+.app-background.dark-mode {
+  background: linear-gradient(120deg, #161922, #222034 70%);
+  color: #eaffff;
+}
+
+.appbar-glassy {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.65rem 2.5vw;
+  background: var(--glassy-bg);
+  box-shadow: var(--shadow);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+  z-index: 20;
+  position: sticky;
+  top: 0;
+}
+
+.brand-logo {
+  font-size: 2rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .07rem;
+  color: var(--neon-pink);
+  text-shadow: 0 0 8px var(--neon-pink), 0 2px 2px #14001077;
+}
+
+.theme-toggle-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.75rem;
+  color: var(--neon-green);
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 0.2em;
+  transition: background 0.2s;
+}
+.theme-toggle-btn:hover {
+  background: rgba(255,255,255,0.14);
+  box-shadow: 0 0 12px var(--neon-pink);
+}
+
+.dashboard-container {
+  padding: 2vw 1vw;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.5vw;
+}
+
+.dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 980px;
+  margin-top: 3vh;
+}
+
+/* Glass morphism Card styles */
+.glass-card {
+  background: var(--frosted-bg);
+  box-shadow: var(--shadow);
+  border-radius: var(--card-radius);
+  border: 1.5px solid var(--border);
+  padding: 2rem 1.4rem;
+  backdrop-filter: blur(var(--blur));
+  -webkit-backdrop-filter: blur(var(--blur));
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  transition: box-shadow .25s, transform .15s, border .25s;
+}
+.glass-card:hover {
+  box-shadow: 0 0 24px 1px var(--neon-pink), 0 8px 36px -4px #1f193033;
+  border: 1.5px solid var(--neon);
+  transform: translateY(-5px) scale(1.022);
+  z-index: 2;
+}
+
+.glass-card h2 {
+  margin: 0 0 10px 0;
+  font-size: 1.3rem;
+  color: var(--neon);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.card-value {
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 0.4em;
+  transition: color 0.2s;
+}
+.card-value.points {
+  color: var(--neon-green);
+}
+.neon-border {
+  box-shadow: 0 0 0 1.5px var(--neon),
+              0 0 18px 0 var(--neon);
+}
+.neon-border.accent {
+  box-shadow: 0 0 0 1.5px var(--neon-green),
+              0 0 18px 0 var(--neon-green);
+}
+.neon-border.danger {
+  box-shadow: 0 0 0 1.5px var(--neon-red),
+              0 0 22px 0 var(--neon-red);
+}
+.neon-border.redeem {
+  box-shadow: 0 0 0 1.5px var(--neon-pink),
+              0 0 18px 0 var(--neon-pink);
+}
+
+#redeem-card .card-value {
+  font-size: 2.1rem;
+  color: var(--neon-pink);
+}
+
+/* Glass Frosted Utility Bar */
+.glass-bar {
+  background: var(--frosted-bg);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5em;
+  padding: 0.7em 2em;
+  margin: 2em auto 1.5em auto;
+  width: max-content;
+  box-shadow: 0 2px 12px 0 #222a3331;
+  border: 1px solid var(--border);
+}
+
+/* Dashboard status bar, tags, actions */
+.sticky-animate {
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  font-size: 1.06rem;
+  padding-right: 0.5em;
+  animation: flashy 2.6s infinite alternate;
+}
+
+.streak {
+  color: #ffb13b;
+}
+.confetti {
+  color: #3fffa8;
+  font-size: 1.15em;
+  animation: popfade 1.5s;
+}
+.neon-text {
+  color: var(--neon-pink);
+  text-shadow: 0 2px 10px var(--neon-pink), 0 0 7px var(--neon-pink);
+}
+.tag {
+  background: linear-gradient(90deg,#262943 80%,#6c69c6);
+  color: #d0fffaee;
+  border-radius: 12px;
+  padding: 0 8px;
+  font-size: 0.99em;
+  margin: 0 7px;
+}
+.rule-engine-btn .text-btn {
+  background: transparent;
+  color: var(--neon-green);
+  border: none;
+  font-weight: 600;
+  transition: text-shadow 0.13s, color 0.15s;
+}
+.rule-engine-btn .text-btn.neon-hover:hover {
+  text-shadow: 0 2px 8px var(--neon-green);
+  color: var(--neon);
+}
+.notifications-btn .icon-btn {
+  background: transparent;
+  border: none;
+  color: var(--neon);
+  font-size: 1.55rem;
+  border-radius: 50%;
+  transition: background 0.13s;
+}
+.notifications-btn .icon-btn.neon-hover:hover {
+  background: rgba(33,255,255,0.08);
+  box-shadow: 0 0 7px var(--neon);
+}
+
+/* Footer */
+.app-footer {
+  font-size: 1.02rem;
+  justify-content: space-between;
+  width: 98%;
+  margin: 1.5em auto 0 auto;
+  border-radius: 1.4em 1.4em 0 0;
+  background: var(--glassy-bg);
+  box-shadow: 0 0px 32px 0 #222a3344;
+  border-top: 1.5px solid var(--border);
+  z-index: 11;
+  padding: 1em 3vw;
+}
+.footer-accent {
+  color: var(--neon-green);
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+.app-footer nav a {
+  margin-left: 1em;
+  color: var(--neon-pink);
+  text-decoration: none;
+  transition: color 0.17s;
+}
+.app-footer nav a.neon-link:hover {
+  color: var(--neon);
+  text-shadow: 0 2px 10px var(--neon);
+}
+
+/* Animations for confetti/streak */
+@keyframes flashy {
+  from { opacity: 0.70; filter: blur(0.6px);}
+  to   { opacity: 1;   filter: blur(0);}
+}
+@keyframes popfade {
+  0% { transform: scale(1.25); opacity: 0;}
+  60% {transform: scale(1.00); opacity: 1;}
+  100% {transform: scale(1); opacity: 0.1;}
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .dashboard-cards {
+    grid-template-columns: 1fr 1fr;
+    gap: 1.1rem;
+  }
+  .appbar-glassy, .app-footer { padding: .7em 1em; }
+}
+@media (max-width: 510px) {
+  .dashboard-cards {
+    grid-template-columns: 1fr;
+  }
+  .glass-bar {
+    gap: 0.6em;
+    padding: .65em;
+    flex-wrap: wrap;
+  }
+}
