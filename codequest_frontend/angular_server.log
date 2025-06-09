@@ -87,3 +87,245 @@ main.server.mjs     | main.server | 800 bytes |
 Application bundle generation complete. [0.451 seconds]
 
 Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.358 seconds]
+
+✘ [ERROR] TS2345: Argument of type 'typeof AppComponent' is not assignable to parameter of type '() => Promise<ApplicationRef>'.
+  Type 'typeof AppComponent' provides no match for the signature '(): Promise<ApplicationRef>'. [plugin angular-compiler]
+
+    src/main.server.ts:10:20:
+      10 │   renderApplication(AppComponent, {
+         ╵                     ~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2339: Property 'document' does not exist on type '{ url: string; }'. [plugin angular-compiler]
+
+    src/main.server.ts:12:22:
+      12 │     document: options.document,
+         ╵                       ~~~~~~~~
+
+
+✘ [ERROR] TS2322: Type '(options: { url: string; }) => Promise<string>' is not assignable to type 'Type<{}> | (() => Promise<ApplicationRef>) | undefined'.
+  Type '(options: { url: string; }) => Promise<string>' is not assignable to type '() => Promise<ApplicationRef>'.
+    Target signature provides too few arguments. Expected 1 or more, but got 0. [plugin angular-compiler]
+
+    src/server.ts:46:6:
+      46 │       bootstrap,
+         ╵       ~~~~~~~~~
+
+  The expected type comes from property 'bootstrap' which is declared here on type 'CommonEngineRenderOptions'
+
+    node_modules/@angular/ssr/node/index.d.ts:70:4:
+      70 │     bootstrap?: Type<{}> | (() => Promise<ApplicationRef>);
+         ╵     ~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.253 seconds]
+
+✘ [ERROR] TS2345: Argument of type 'typeof AppComponent' is not assignable to parameter of type '() => Promise<ApplicationRef>'.
+  Type 'typeof AppComponent' provides no match for the signature '(): Promise<ApplicationRef>'. [plugin angular-compiler]
+
+    src/main.server.ts:10:20:
+      10 │   renderApplication(AppComponent, {
+         ╵                     ~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2339: Property 'document' does not exist on type '{ url: string; }'. [plugin angular-compiler]
+
+    src/main.server.ts:12:22:
+      12 │     document: options.document,
+         ╵                       ~~~~~~~~
+
+
+✘ [ERROR] TS2353: Object literal may only specify known properties, and 'document' does not exist in type '{ url: string; }'. [plugin angular-compiler]
+
+    src/server.ts:33:6:
+      33 │       document,
+         ╵       ~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.117 seconds]
+
+✘ [ERROR] TS2345: Argument of type 'typeof AppComponent' is not assignable to parameter of type '() => Promise<ApplicationRef>'.
+  Type 'typeof AppComponent' provides no match for the signature '(): Promise<ApplicationRef>'. [plugin angular-compiler]
+
+    src/main.server.ts:10:20:
+      10 │   renderApplication(AppComponent, {
+         ╵                     ~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2353: Object literal may only specify known properties, and 'document' does not exist in type '{ url: string; }'. [plugin angular-compiler]
+
+    src/server.ts:33:6:
+      33 │       document,
+         ╵       ~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.201 seconds]
+
+✘ [ERROR] TS2345: Argument of type 'typeof AppComponent' is not assignable to parameter of type '() => Promise<ApplicationRef>'.
+  Type 'typeof AppComponent' provides no match for the signature '(): Promise<ApplicationRef>'. [plugin angular-compiler]
+
+    src/main.server.ts:10:20:
+      10 │   renderApplication(AppComponent, {
+         ╵                     ~~~~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.309 seconds]
+
+✘ [ERROR] TS2345: Argument of type 'typeof AppComponent' is not assignable to parameter of type '() => Promise<ApplicationRef>'.
+  Type 'typeof AppComponent' provides no match for the signature '(): Promise<ApplicationRef>'. [plugin angular-compiler]
+
+    src/main.server.ts:10:20:
+      10 │   renderApplication(AppComponent, {
+         ╵                     ~~~~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.117 seconds]
+
+✘ [ERROR] TS2345: Argument of type 'typeof AppComponent' is not assignable to parameter of type '() => Promise<ApplicationRef>'.
+  Type 'typeof AppComponent' provides no match for the signature '(): Promise<ApplicationRef>'. [plugin angular-compiler]
+
+    src/main.server.ts:10:27:
+      10 │   return renderApplication(AppComponent, {
+         ╵                            ~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2554: Expected 0 arguments, but got 1. [plugin angular-compiler]
+
+    src/server.ts:30:33:
+      30 │     const html = await bootstrap({
+         ╵                                  ^
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.643 seconds]
+
+✘ [ERROR] TS2345: Argument of type 'typeof AppComponent' is not assignable to parameter of type '() => Promise<ApplicationRef>'.
+  Type 'typeof AppComponent' provides no match for the signature '(): Promise<ApplicationRef>'. [plugin angular-compiler]
+
+    src/main.server.ts:10:27:
+      10 │   return renderApplication(AppComponent, {
+         ╵                            ~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2300: Duplicate identifier 'express'. [plugin angular-compiler]
+
+    src/server.ts:1:7:
+      1 │ import express from 'express';
+        ╵        ~~~~~~~
+
+
+✘ [ERROR] TS2300: Duplicate identifier 'express'. [plugin angular-compiler]
+
+    src/server.ts:4:7:
+      4 │ import express from 'express';
+        ╵        ~~~~~~~
+
+
+✘ [ERROR] TS2322: Type '() => Promise<string>' is not assignable to type 'Type<{}> | (() => Promise<ApplicationRef>) | undefined'.
+  Type '() => Promise<string>' is not assignable to type '() => Promise<ApplicationRef>'.
+    Type 'Promise<string>' is not assignable to type 'Promise<ApplicationRef>'.
+      Type 'string' is not assignable to type 'ApplicationRef'. [plugin angular-compiler]
+
+    src/server.ts:32:6:
+      32 │       bootstrap,
+         ╵       ~~~~~~~~~
+
+  The expected type comes from property 'bootstrap' which is declared here on type 'CommonEngineRenderOptions'
+
+    node_modules/@angular/ssr/node/index.d.ts:70:4:
+      70 │     bootstrap?: Type<{}> | (() => Promise<ApplicationRef>);
+         ╵     ~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.226 seconds]
+
+✘ [ERROR] TS2345: Argument of type 'typeof AppComponent' is not assignable to parameter of type '() => Promise<ApplicationRef>'.
+  Type 'typeof AppComponent' provides no match for the signature '(): Promise<ApplicationRef>'. [plugin angular-compiler]
+
+    src/main.server.ts:10:27:
+      10 │   return renderApplication(AppComponent, {
+         ╵                            ~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2300: Duplicate identifier 'express'. [plugin angular-compiler]
+
+    src/server.ts:1:7:
+      1 │ import express from 'express';
+        ╵        ~~~~~~~
+
+
+✘ [ERROR] TS2300: Duplicate identifier 'express'. [plugin angular-compiler]
+
+    src/server.ts:4:7:
+      4 │ import express from 'express';
+        ╵        ~~~~~~~
+
+
+✘ [ERROR] TS2322: Type '() => Promise<string>' is not assignable to type 'Type<{}> | (() => Promise<ApplicationRef>) | undefined'.
+  Type '() => Promise<string>' is not assignable to type '() => Promise<ApplicationRef>'.
+    Type 'Promise<string>' is not assignable to type 'Promise<ApplicationRef>'.
+      Type 'string' is not assignable to type 'ApplicationRef'. [plugin angular-compiler]
+
+    src/server.ts:32:6:
+      32 │       bootstrap,
+         ╵       ~~~~~~~~~
+
+  The expected type comes from property 'bootstrap' which is declared here on type 'CommonEngineRenderOptions'
+
+    node_modules/@angular/ssr/node/index.d.ts:70:4:
+      70 │     bootstrap?: Type<{}> | (() => Promise<ApplicationRef>);
+         ╵     ~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.191 seconds]
+
+✘ [ERROR] TS2300: Duplicate identifier 'express'. [plugin angular-compiler]
+
+    src/server.ts:1:7:
+      1 │ import express from 'express';
+        ╵        ~~~~~~~
+
+
+✘ [ERROR] TS2300: Duplicate identifier 'express'. [plugin angular-compiler]
+
+    src/server.ts:4:7:
+      4 │ import express from 'express';
+        ╵        ~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.171 seconds]
+
+✘ [ERROR] TS2300: Duplicate identifier 'express'. [plugin angular-compiler]
+
+    src/server.ts:1:7:
+      1 │ import express from 'express';
+        ╵        ~~~~~~~
+
+
+✘ [ERROR] TS2300: Duplicate identifier 'express'. [plugin angular-compiler]
+
+    src/server.ts:6:7:
+      6 │ import express from 'express';
+        ╵        ~~~~~~~
+
+
