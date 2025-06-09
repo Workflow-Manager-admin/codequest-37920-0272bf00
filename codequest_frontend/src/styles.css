@@ -3,28 +3,28 @@
 :root {
   --primary: #101228;
   --secondary: #131829;
-  --accent: #202149;
+  --accent: #21274a;
 
-  /* Neon/cyber colors enhance - focus on blue/cyan/purple, eliminate pink/magenta */
-  --neon: #36f3ff;
-  --neon-blue: #22f7ff;
-  --neon-green: #09ffcc;
-  --neon-purple: #8c3fff;
-  --neon-cyan: #14f3fa;
-  /* Remove all magenta/pink, reinforce hues for a pure cyber feel; add deeper blue and cyber-amber for accent */
-  --neon-deep-blue: #111abb;
-  --neon-red: #ff229c;
-  --neon-amber: #f7df43;
+  /* Refined cyber/neon palette (blues, cyans, purples). Stripped pinks, no magenta. */
+  --neon: #1bd9ff;             /* Main neon accent */
+  --neon-blue: #27b3ff;        /* Neon blue highlight */
+  --neon-cyan: #00fff0;        /* Bright cyan edge */
+  --neon-purple: #7b32ff;      /* Deep neon purple accent */
+  --neon-green: #12fae0;       /* Neon green/aux accent */
+  --neon-amber: #ffd93a;       /* Cyber-amber */
+  --neon-deep-blue: #1328d1;   /* Deeper blue for depth */
+  --neon-red: #2cfffd;         /* Cyber red (actually a luminous electric-cyan pinkless red for error cues) */
 
-  --glassy-bg: rgba(22, 28, 48, 0.80);
-  --frosted-bg: rgba(17, 35, 60, 0.32);
+  /* Dark glass/frost/overlay. */
+  --glassy-bg: rgba(18, 22, 42, 0.85);
+  --frosted-bg: rgba(10, 26, 52, 0.59);
 
-  --blur: 29px;
-  --dark-bg: #090d28;
-  --border: rgba(34,255,255,0.18);
-  --shadow: 0 12px 56px 0 rgba(2,23,53,0.52), 0 2px 56px #1a21aa22;
+  --blur: 30px;
+  --dark-bg: #080c1e;    /* Even deeper blue for night bg. */
+  --border: rgba(43,244,255,0.19);
+  --shadow: 0 12px 56px 0 #162d59aa, 0 2px 56px #1bd9ff22, 0 0 100px 2px #8c3fff22;
   --card-radius: 2.3rem;
-  --font-title: 'Oxanium', 'Inter Tight', 'Segoe UI', Arial, sans-serif;
+  --font-title: 'Oxanium', 'Orbitron', 'Inter Tight', 'Segoe UI', Arial, sans-serif;
 }
 
 
