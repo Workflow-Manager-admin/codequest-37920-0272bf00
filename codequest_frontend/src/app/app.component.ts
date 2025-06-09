@@ -28,8 +28,10 @@ export class AppComponent implements AfterViewInit {
   // Animate the ninja patrol
   private patrolTimer: any = null;
   private ninjaEl: HTMLElement | null = null;
+  private isNinjaBusy = false;
+  private originalNinjaTransition = '';
+  private pendingNavigation: (() => void) | null = null;
 
-  // No dependencies required in constructor (ngZone removed to resolve linter error)
   constructor() {}
 
   // PUBLIC_INTERFACE
@@ -43,6 +45,113 @@ export class AppComponent implements AfterViewInit {
     this.initAnimatedNightSky();
     this.initNinjaParallax();
     this.initNinjaPatrol();
+    // Attach listeners for dashboard card actions (for demo: all .glass-card)
+    globalThis.setTimeout(() => this.setupDashboardCardListeners(), 350);
+  }
+
+  // PUBLIC_INTERFACE
+  onDashboardActionClick(_ev?: Event, targetSelector?: string) {
+    // Defensive: SSR/platform check
+    if (typeof globalThis === 'undefined' || !globalThis.document) return;
+    if (this.isNinjaBusy) return; // Prevent double-trigger
+
+    let targetEl: HTMLElement | null = null;
+    if (_ev && _ev.currentTarget) {
+      targetEl = _ev.currentTarget as HTMLElement;
+    } else if (targetSelector) {
+      targetEl = globalThis.document.querySelector(targetSelector) as HTMLElement | null;
+    }
+
+    if (!targetEl) return;
+    this.isNinjaBusy = true;
+
+    // Calculate center of target element in viewport
+    const rect = targetEl.getBoundingClientRect();
+    const vw = globalThis.innerWidth || 1200;
+
+    // Setup ninja element
+    if (!this.ninjaEl) {
+      this.ninjaEl = globalThis.document.getElementById('ninja-patrol') as HTMLElement | null;
+      if (!this.ninjaEl) { this.isNinjaBusy = false; return; }
+    }
+
+    // Pause patrol
+    if (this.patrolTimer) globalThis.clearTimeout(this.patrolTimer);
+
+    // Get ninja's current position in screen coordinates
+    const ninjaRect = this.ninjaEl.getBoundingClientRect();
+    const targetCenter = {
+      x: rect.left + rect.width/2,
+      y: rect.top + rect.height*0.68   // sword aims mid-lower
+    };
+
+    // Calculate translation required (current transform may need consideration)
+    // We'll use translate(x, y) from top-left of #ninja-patrol-layer
+    const layerRect = (this.ninjaEl.parentElement as HTMLElement).getBoundingClientRect();
+    // Calculate new (x, y) relative to the parent
+    const nx = targetCenter.x - layerRect.left - ninjaRect.width/2;
+    const ny = targetCenter.y - layerRect.top - ninjaRect.height/2;
+
+    // Save original transition
+    this.originalNinjaTransition = this.ninjaEl.style.transition;
+    // Move ninja to target with animation
+    const dist = Math.sqrt(Math.pow(nx - this.ninjaEl.offsetLeft,2) + Math.pow(ny - this.ninjaEl.offsetTop,2));
+    const baseDuration = 0.45 + Math.min(1.15, Math.max(0.24, dist / 580));
+    this.ninjaEl.style.transition = `transform ${baseDuration.toFixed(2)}s cubic-bezier(.61,.18,.3,.91)`;
+
+    // Flip ninja if moving leftward
+    const scaleX = nx + ninjaRect.width/2 > vw/2 ? -1 : 1;
+    this.ninjaEl.style.transform = `translate(${nx}px, ${ny}px) scaleX(${scaleX})`;
+
+    // After movement completes, trigger ninja swing and button break
+    globalThis.setTimeout(() => {
+      // Signal sword swing using NinjacutComponent API: call startAnimation on its instance
+      let appNinjaComp: any = undefined;
+      if ('ng' in globalThis && typeof (globalThis as any).ng.getComponent === 'function') {
+        appNinjaComp = (globalThis as any).ng.getComponent(this.ninjaEl);
+      }
+      if (appNinjaComp && typeof appNinjaComp.startAnimation === 'function') {
+        appNinjaComp.startAnimation();
+      } else {
+        // fallback: dispatch event so angular picks up
+        this.ninjaEl?.dispatchEvent(new CustomEvent('triggerNinjaSwing', { bubbles: true }));
+      }
+
+      // Add break/shatter style to button
+      targetEl.classList.add('card-break-shatter');
+      // Remove after a delay to allow CSS animation
+      globalThis.setTimeout(() => {
+        targetEl.classList.remove('card-break-shatter');
+      }, 650);
+
+      // Wait for sword swing to visually finish before navigating
+      globalThis.setTimeout(() => {
+        // Clean up ninja transition; resume patrol after little delay
+        this.ninjaEl!.style.transition = this.originalNinjaTransition;
+        this.isNinjaBusy = false;
+        // Skipping navigation/redirect for demonstration;
+        this.patrolTimer = globalThis.setTimeout(() => this.moveNinjaRandomly(), 600);
+      }, 950);
+    }, baseDuration * 1000 + 90);
+  }
+
+  // Attach click handlers to all dashboard cards generically
+  private setupDashboardCardListeners() {
+    if (typeof globalThis === 'undefined' || !globalThis.document) return;
+    // All actionable dashboard cards (add more selectors as needed)
+    const cardSelectors = [
+      '#prs-card', '#points-card', '#bugs-card', '#redeem-card'
+    ];
+    cardSelectors.forEach(sel => {
+      const el = globalThis.document.querySelector(sel) as HTMLElement | null;
+      if (!el) return;
+      el.style.cursor = "pointer";
+      // Remove pre-existing listener to avoid duplicates
+      el.removeEventListener('click', (ev) => {});
+      el.addEventListener('click', () => {
+        this.onDashboardActionClick(undefined, sel);
+      }, { passive: false });
+    });
   }
 
   /**

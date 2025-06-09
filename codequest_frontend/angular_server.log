@@ -9,114 +9,6 @@ The "disableHostCheck" option will not be used because it is not supported by th
 Browser bundles     
 Initial chunk files  | Names            |  Raw size
 polyfills.js         | polyfills        |  90.20 kB | 
-main.js              | main             |  47.53 kB | 
-styles.css           | styles           |   1.68 kB | 
-
-                     | Initial total    | 139.41 kB
-
-
-Server bundles      
-Initial chunk files  | Names            |  Raw size
-polyfills.server.mjs | polyfills.server | 572.91 kB | 
-chunk-JJ3OQV2A.mjs   | -                |  47.97 kB | 
-server.mjs           | server           |   1.39 kB | 
-main.server.mjs      | main.server      | 800 bytes | 
-
-Application bundle generation complete. [3.136 seconds]
-
-Watch mode enabled. Watching for file changes...
-NOTE: Raw file sizes do not reflect development server per-request transformations.
-  ➜  Local:   http://localhost:3000/
-  ➜  Network: http://172.17.0.2:3000/
-❯ Changes detected. Rebuilding...
-✔ Changes detected. Rebuilding...
-Browser bundles    
-Initial chunk files | Names       |  Raw size
-main.js             | main        |  50.89 kB | 
-
-
-Server bundles     
-Initial chunk files | Names       |  Raw size
-chunk-3TD4GR5Y.mjs  | -           |  51.33 kB | 
-server.mjs          | server      |   1.39 kB | 
-main.server.mjs     | main.server | 800 bytes | 
-
-Application bundle generation complete. [0.822 seconds]
-
-Page reload sent to client(s).
-❯ Changes detected. Rebuilding...
-✔ Changes detected. Rebuilding...
-Browser bundles    
-Initial chunk files | Names       |  Raw size
-main.js             | main        |  50.92 kB | 
-
-
-Server bundles     
-Initial chunk files | Names       |  Raw size
-chunk-MDY57N67.mjs  | -           |  51.36 kB | 
-server.mjs          | server      |   1.39 kB | 
-main.server.mjs     | main.server | 800 bytes | 
-
-Application bundle generation complete. [0.523 seconds]
-
-Page reload sent to client(s).
-❯ Changes detected. Rebuilding...
-✔ Changes detected. Rebuilding...
-Browser bundles    
-Initial chunk files | Names       |  Raw size
-main.js             | main        |  50.95 kB | 
-
-
-Server bundles     
-Initial chunk files | Names       |  Raw size
-chunk-GI2FJIQY.mjs  | -           |  51.38 kB | 
-server.mjs          | server      |   1.39 kB | 
-main.server.mjs     | main.server | 800 bytes | 
-
-Application bundle generation complete. [0.540 seconds]
-
-Page reload sent to client(s).
-❯ Changes detected. Rebuilding...
-✔ Changes detected. Rebuilding...
-Application bundle generation failed. [0.628 seconds]
-
-✘ [ERROR] TS2339: Property 'ngZone' does not exist on type 'AppComponent'. [plugin angular-compiler]
-
-    src/app/app.component.ts:57:14:
-      57 │     void this.ngZone;
-         ╵               ~~~~~~
-
-
-✘ [ERROR] TS2339: Property 'ngZone' does not exist on type 'AppComponent'. [plugin angular-compiler]
-
-    src/app/app.component.ts:58:9:
-      58 │     this.ngZone.runOutsideAngular(() => {
-         ╵          ~~~~~~
-
-
-❯ Changes detected. Rebuilding...
-✔ Changes detected. Rebuilding...
-Application bundle generation failed. [0.426 seconds]
-
-✘ [ERROR] TS2339: Property 'ngZone' does not exist on type 'AppComponent'. [plugin angular-compiler]
-
-    src/app/app.component.ts:57:14:
-      57 │     void this.ngZone;
-         ╵               ~~~~~~
-
-
-✘ [ERROR] TS2339: Property 'ngZone' does not exist on type 'AppComponent'. [plugin angular-compiler]
-
-    src/app/app.component.ts:58:9:
-      58 │     this.ngZone.runOutsideAngular(() => {
-         ╵          ~~~~~~
-
-
-❯ Changes detected. Rebuilding...
-✔ Changes detected. Rebuilding...
-Browser bundles     
-Initial chunk files  | Names            |  Raw size
-polyfills.js         | polyfills        |  90.20 kB | 
 main.js              | main             |  50.76 kB | 
 styles.css           | styles           |   1.68 kB | 
 
@@ -126,13 +18,267 @@ styles.css           | styles           |   1.68 kB |
 Server bundles      
 Initial chunk files  | Names            |  Raw size
 polyfills.server.mjs | polyfills.server | 572.91 kB | 
-chunk-TG7F4XQW.mjs   | -                |  51.20 kB | 
+chunk-CCDRJWAN.mjs   | -                |  51.20 kB | 
 server.mjs           | server           |   1.39 kB | 
 main.server.mjs      | main.server      | 800 bytes | 
 
-Application bundle generation complete. [0.543 seconds]
+Application bundle generation complete. [3.685 seconds]
 
-4:59:33 PM [vite] Internal server error: ɵgetOrCreateAngularServerApp is not a function
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+  ➜  Local:   http://localhost:3000/
+  ➜  Network: http://172.17.0.2:3000/
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [1.019 seconds]
+
+✘ [ERROR] TS7053: Element implicitly has an 'any' type because expression of type '"ng"' can't be used to index type 'typeof globalThis'.
+  Property 'ng' does not exist on type 'typeof globalThis'. [plugin angular-compiler]
+
+    src/app/app.component.ts:115:28:
+      115 │ ... const appNinjaComp = (globalThis['ng']?.getComponent?.(this.n...
+          ╵                           ~~~~~~~~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.594 seconds]
+
+✘ [ERROR] TS7053: Element implicitly has an 'any' type because expression of type '"ng"' can't be used to index type 'typeof globalThis'.
+  Property 'ng' does not exist on type 'typeof globalThis'. [plugin angular-compiler]
+
+    src/app/app.component.ts:115:28:
+      115 │ ... const appNinjaComp = (globalThis['ng']?.getComponent?.(this.n...
+          ╵                           ~~~~~~~~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.495 seconds]
+
+✘ [ERROR] TS-992003: No suitable injection token for parameter 'ngZone' of class 'AppComponent'.
+  Consider using the @Inject decorator to specify an injection token. [plugin angular-compiler]
+
+    src/app/app.component.ts:35:22:
+      35 │   constructor(private ngZone: NgZone, private router: Router) {}
+         ╵                       ~~~~~~
+
+  This type does not have a value, so it cannot be used as injection token.
+
+    src/app/app.component.ts:35:30:
+      35 │   constructor(private ngZone: NgZone, private router: Router) {}
+         ╵                               ~~~~~~
+
+
+✘ [ERROR] TS2304: Cannot find name 'NgZone'. [plugin angular-compiler]
+
+    src/app/app.component.ts:35:30:
+      35 │   constructor(private ngZone: NgZone, private router: Router) {}
+         ╵                               ~~~~~~
+
+
+✘ [ERROR] TS2304: Cannot find name 'Router'. [plugin angular-compiler]
+
+    src/app/app.component.ts:35:54:
+      35 │   constructor(private ngZone: NgZone, private router: Router) {}
+         ╵                                                       ~~~~~~
+
+
+✘ [ERROR] TS7053: Element implicitly has an 'any' type because expression of type '"ng"' can't be used to index type 'typeof globalThis'.
+  Property 'ng' does not exist on type 'typeof globalThis'. [plugin angular-compiler]
+
+    src/app/app.component.ts:115:28:
+      115 │ ... const appNinjaComp = (globalThis['ng']?.getComponent?.(this.n...
+          ╵                           ~~~~~~~~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.478 seconds]
+
+✘ [ERROR] TS2339: Property 'ngZone' does not exist on type 'AppComponent'. [plugin angular-compiler]
+
+    src/app/app.component.ts:49:9:
+      49 │     this.ngZone.runOutsideAngular(() => {
+         ╵          ~~~~~~
+
+
+✘ [ERROR] TS7053: Element implicitly has an 'any' type because expression of type '"ng"' can't be used to index type 'typeof globalThis'.
+  Property 'ng' does not exist on type 'typeof globalThis'. [plugin angular-compiler]
+
+    src/app/app.component.ts:115:28:
+      115 │ ... const appNinjaComp = (globalThis['ng']?.getComponent?.(this.n...
+          ╵                           ~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2339: Property 'ngZone' does not exist on type 'AppComponent'. [plugin angular-compiler]
+
+    src/app/app.component.ts:136:15:
+      136 │           this.ngZone.run(() => {
+          ╵                ~~~~~~
+
+
+✘ [ERROR] TS2339: Property 'router' does not exist on type 'AppComponent'. [plugin angular-compiler]
+
+    src/app/app.component.ts:137:32:
+      137 │             if (nav.route) this.router.navigate([nav.route]);
+          ╵                                 ~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.408 seconds]
+
+✘ [ERROR] TS7053: Element implicitly has an 'any' type because expression of type '"ng"' can't be used to index type 'typeof globalThis'.
+  Property 'ng' does not exist on type 'typeof globalThis'. [plugin angular-compiler]
+
+    src/app/app.component.ts:113:28:
+      113 │ ... const appNinjaComp = (globalThis['ng']?.getComponent?.(this.n...
+          ╵                           ~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS2339: Property 'ngZone' does not exist on type 'AppComponent'. [plugin angular-compiler]
+
+    src/app/app.component.ts:134:15:
+      134 │           this.ngZone.run(() => {
+          ╵                ~~~~~~
+
+
+✘ [ERROR] TS2339: Property 'router' does not exist on type 'AppComponent'. [plugin angular-compiler]
+
+    src/app/app.component.ts:135:32:
+      135 │             if (nav.route) this.router.navigate([nav.route]);
+          ╵                                 ~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles     
+Initial chunk files  | Names            |  Raw size
+polyfills.js         | polyfills        |  90.20 kB | 
+main.js              | main             |  56.43 kB | 
+styles.css           | styles           |   1.68 kB | 
+
+                     | Initial total    | 148.31 kB
+
+
+Server bundles      
+Initial chunk files  | Names            |  Raw size
+polyfills.server.mjs | polyfills.server | 572.91 kB | 
+chunk-E5MGZGKB.mjs   | -                |  56.87 kB | 
+server.mjs           | server           |   1.39 kB | 
+main.server.mjs      | main.server      | 800 bytes | 
+
+Application bundle generation complete. [0.378 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles     
+Initial chunk files  | Names            |  Raw size
+polyfills.js         | polyfills        |  90.20 kB | 
+main.js              | main             |  56.43 kB | 
+styles.css           | styles           |   1.68 kB | 
+
+                     | Initial total    | 148.31 kB
+
+
+Server bundles      
+Initial chunk files  | Names            |  Raw size
+polyfills.server.mjs | polyfills.server | 572.91 kB | 
+chunk-E5MGZGKB.mjs   | -                |  56.87 kB | 
+server.mjs           | server           |   1.39 kB | 
+main.server.mjs      | main.server      | 800 bytes | 
+
+Application bundle generation complete. [0.360 seconds]
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.371 seconds]
+
+✘ [ERROR] TS2554: Expected 1-2 arguments, but got 3. [plugin angular-compiler]
+
+    src/app/app.component.ts:162:45:
+      162 │         this.onDashboardActionClick(ev, sel, navData);
+          ╵                                              ~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles     
+Initial chunk files  | Names            |  Raw size
+polyfills.js         | polyfills        |  90.20 kB | 
+main.js              | main             |  56.21 kB | 
+styles.css           | styles           |   1.68 kB | 
+
+                     | Initial total    | 148.09 kB
+
+
+Server bundles      
+Initial chunk files  | Names            |  Raw size
+polyfills.server.mjs | polyfills.server | 572.91 kB | 
+chunk-MUPCGKPQ.mjs   | -                |  56.65 kB | 
+server.mjs           | server           |   1.39 kB | 
+main.server.mjs      | main.server      | 800 bytes | 
+
+Application bundle generation complete. [0.613 seconds]
+
+5:03:15 PM [vite] Internal server error: ɵgetOrCreateAngularServerApp is not a function
       at /home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/node_modules/@angular/build/src/tools/vite/middlewares/ssr-middleware.js:30:38
       at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
 Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.515 seconds]
+
+✘ [ERROR] TS2345: Argument of type 'undefined' is not assignable to parameter of type 'Event'. [plugin angular-compiler]
+
+    src/app/app.component.ts:152:36:
+      152 │         this.onDashboardActionClick(undefined, sel);
+          ╵                                     ~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles     
+Initial chunk files  | Names            |  Raw size
+polyfills.js         | polyfills        |  90.20 kB | 
+main.js              | main             |  56.22 kB | 
+styles.css           | styles           |   1.68 kB | 
+
+                     | Initial total    | 148.10 kB
+
+
+Server bundles      
+Initial chunk files  | Names            |  Raw size
+polyfills.server.mjs | polyfills.server | 572.91 kB | 
+chunk-DV3LVS7C.mjs   | -                |  56.66 kB | 
+server.mjs           | server           |   1.39 kB | 
+main.server.mjs      | main.server      | 800 bytes | 
+
+Application bundle generation complete. [0.618 seconds]
+
+5:03:46 PM [vite] Internal server error: ɵgetOrCreateAngularServerApp is not a function
+      at /home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/node_modules/@angular/build/src/tools/vite/middlewares/ssr-middleware.js:30:38
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles     
+Initial chunk files  | Names            |  Raw size
+polyfills.js         | polyfills        |  90.20 kB | 
+main.js              | main             |  56.22 kB | 
+styles.css           | styles           |   1.68 kB | 
+
+                     | Initial total    | 148.10 kB
+
+
+Server bundles      
+Initial chunk files  | Names            |  Raw size
+polyfills.server.mjs | polyfills.server | 572.91 kB | 
+chunk-DV3LVS7C.mjs   | -                |  56.66 kB | 
+server.mjs           | server           |   1.39 kB | 
+main.server.mjs      | main.server      | 800 bytes | 
+
+Application bundle generation complete. [0.697 seconds]
+

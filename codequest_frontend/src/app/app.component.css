@@ -278,3 +278,55 @@
   .dashboard-cards{grid-template-columns:1fr;}
   .glass-bar{gap:.4em;padding:.36em;flex-wrap:wrap;}
 }
+
+/* Break/shatter visual on card (triggered) */
+.card-break-shatter {
+  animation: card-shatter 0.61s cubic-bezier(.44,1.3,.53,.99) 1;
+  box-shadow: 0 0 21px 5px #1bd9ffaa, 0 0 90px 3px #12fae060, 0 0 22px 1px #fff2 inset !important;
+  filter: blur(1.3px) saturate(1.7) brightness(2.1) drop-shadow(0 8px 19px #12fae099);
+  border-color: var(--neon-cyan) !important;
+}
+@keyframes card-shatter {
+  0%   { transform: scale(1) }
+  12%  { transform: scale(1.08,0.93) rotate(-2deg) }
+  19%  { transform: scale(0.97,1.05) rotate(2deg) }
+  28%  { transform: scale(1.16,0.87) rotate(-8deg) }
+  43%  { transform: scale(0.92,1.18) rotate(7deg) }
+  61%  { transform: scale(1.07,0.98) rotate(-3deg);
+         box-shadow: 0 0 25px 10px #fff5, 0 0 79px 13px #1bd9ffaa; }
+  79%  { transform: scale(1.10,0.91) rotate(2deg);}
+  100% { transform: scale(1) }
+}
+
+@keyframes star-twinkle {
+  0%,100% { opacity: .15; }
+  38% { opacity: .82; }
+  62% { opacity: .31; }
+}
+@keyframes star-drift {
+  from { transform: translateY(0); }
+  to { transform: translateY(40px);}
+}
+@keyframes ninja-bg-float {
+  0% { filter: blur(0.2px) drop-shadow(0 10px 22px #0003); }
+  40% { transform: translate(-20px, 0) scale(1.01);}
+  60% { transform: translate(24px, 12px) scale(1.01);}
+  100% { filter: blur(1px) drop-shadow(0 22px 12px #1135), }
+}
+@keyframes flashy {
+  from { opacity: 0.70; filter: blur(0.6px);}
+  to   { opacity: 1;   filter: blur(0);}
+}
+@keyframes popfade {
+  0% { transform: scale(1.25); opacity: 0;}
+  60% {transform: scale(1.00); opacity: 1;}
+  100% {transform: scale(1); opacity: 0.1;}
+}
+
+/* Responsive global for night-sky (from app) */
+@media (max-width: 700px) {
+  .night-sky-stars {
+    background-size: 124vw 100vh;
+  }
+}
+
