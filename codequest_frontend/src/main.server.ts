@@ -1,9 +1,8 @@
-import { renderApplication } from '@angular/platform-server';
 import { AppComponent } from './app/app.component';
-import { config } from './app/app.config.server';
 
 /**
  * PUBLIC_INTERFACE
- * Angular SSR entrypoint using stable, public Angular SSR API (renderApplication).
+ * Standard Angular SSR entrypoint: only export the root AppComponent type.
+ * All SSR providers are handled in app.config.server.ts.
  */
 export default AppComponent;
