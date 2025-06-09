@@ -9,209 +9,6 @@ The "disableHostCheck" option will not be used because it is not supported by th
 Browser bundles     
 Initial chunk files  | Names            |  Raw size
 polyfills.js         | polyfills        |  90.20 kB | 
-main.js              | main             |  42.49 kB | 
-styles.css           | styles           |   1.58 kB | 
-
-                     | Initial total    | 134.28 kB
-
-
-Server bundles      
-Initial chunk files  | Names            |  Raw size
-polyfills.server.mjs | polyfills.server | 572.91 kB | 
-chunk-4PU5S5HZ.mjs   | -                |  42.93 kB | 
-server.mjs           | server           |   1.39 kB | 
-main.server.mjs      | main.server      | 800 bytes | 
-
-Application bundle generation complete. [3.026 seconds]
-
-Watch mode enabled. Watching for file changes...
-NOTE: Raw file sizes do not reflect development server per-request transformations.
-  ➜  Local:   http://localhost:3000/
-  ➜  Network: http://172.17.0.2:3000/
-❯ Changes detected. Rebuilding...
-✔ Changes detected. Rebuilding...
-Application bundle generation failed. [0.743 seconds]
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:92:17:
-      92 │       let grad = ctx.createLinearGradient(
-         ╵                  ~~~
-
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:102:6:
-      102 │       ctx.fillStyle = grad;
-          ╵       ~~~
-
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:103:6:
-      103 │       ctx.fillRect(0,0,w,h);
-          ╵       ~~~
-
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:111:8:
-      111 │         ctx.globalAlpha = 0.13+alpha*0.83;
-          ╵         ~~~
-
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:112:8:
-      112 │         ctx.beginPath();
-          ╵         ~~~
-
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:113:8:
-      113 │         ctx.arc(star.x, star.y, star.r, 0, Math.PI*2, false);
-          ╵         ~~~
-
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:114:8:
-      114 │         ctx.closePath();
-          ╵         ~~~
-
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:115:8:
-      115 │         ctx.fillStyle = "#fff";
-          ╵         ~~~
-
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:116:8:
-      116 │         ctx.shadowColor = (star.r>1.65?"#4ffcffb3":"#eef7fcbb");
-          ╵         ~~~
-
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:117:8:
-      117 │         ctx.shadowBlur = star.r*7.9;
-          ╵         ~~~
-
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:118:8:
-      118 │         ctx.fill();
-          ╵         ~~~
-
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:127:6:
-      127 │       ctx.globalAlpha = 1;
-          ╵       ~~~
-
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:130:6:
-      130 │       ctx.save();
-          ╵       ~~~
-
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:131:6:
-      131 │       ctx.globalAlpha = 0.18 + 0.11*Math.sin(ts/4000); // subtle ...
-          ╵       ~~~
-
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:132:6:
-      132 │       ctx.beginPath();
-          ╵       ~~~
-
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:136:6:
-      136 │       ctx.moveTo(0, cloud_mid);
-          ╵       ~~~
-
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:138:8:
-      138 │         ctx.lineTo(x, cloud_mid + Math.sin((x+ts/11)/waveLen)*amp...
-          ╵         ~~~
-
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:140:6:
-      140 │       ctx.lineTo(w+10, h);
-          ╵       ~~~
-
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:141:6:
-      141 │       ctx.lineTo(-10, h);
-          ╵       ~~~
-
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:142:6:
-      142 │       ctx.closePath();
-          ╵       ~~~
-
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:143:6:
-      143 │       ctx.fillStyle = "#2c284050";
-          ╵       ~~~
-
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:144:6:
-      144 │       ctx.filter = "blur(3.3px)";
-          ╵       ~~~
-
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:145:6:
-      145 │       ctx.fill();
-          ╵       ~~~
-
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:146:6:
-      146 │       ctx.filter = "none";
-          ╵       ~~~
-
-
-✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
-
-    src/app/app.component.ts:147:6:
-      147 │       ctx.restore();
-          ╵       ~~~
-
-
-❯ Changes detected. Rebuilding...
-✔ Changes detected. Rebuilding...
-Browser bundles     
-Initial chunk files  | Names            |  Raw size
-polyfills.js         | polyfills        |  90.20 kB | 
 main.js              | main             |  44.09 kB | 
 styles.css           | styles           |   1.58 kB | 
 
@@ -225,6 +22,232 @@ chunk-RKD4UOXY.mjs   | -                |  44.53 kB |
 server.mjs           | server           |   1.39 kB | 
 main.server.mjs      | main.server      | 800 bytes | 
 
-Application bundle generation complete. [0.372 seconds]
+Application bundle generation complete. [2.951 seconds]
+
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+  ➜  Local:   http://localhost:3000/
+  ➜  Network: http://172.17.0.2:3000/
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Initial chunk files | Names  | Raw size
+styles.css          | styles |  1.66 kB | 
+
+Application bundle generation complete. [0.035 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       |  Raw size
+main.js             | main        |  44.10 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       |  Raw size
+chunk-N5M7HHXF.mjs  | -           |  44.54 kB | 
+server.mjs          | server      |   1.39 kB | 
+main.server.mjs     | main.server | 800 bytes | 
+
+Application bundle generation complete. [0.784 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       |  Raw size
+main.js             | main        |  44.48 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       |  Raw size
+chunk-KT6DXISN.mjs  | -           |  44.92 kB | 
+server.mjs          | server      |   1.39 kB | 
+main.server.mjs     | main.server | 800 bytes | 
+
+Application bundle generation complete. [0.361 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       |  Raw size
+main.js             | main        |  44.56 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       |  Raw size
+chunk-3YNWO3AB.mjs  | -           |  45.00 kB | 
+server.mjs          | server      |   1.39 kB | 
+main.server.mjs     | main.server | 800 bytes | 
+
+Application bundle generation complete. [0.458 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       |  Raw size
+main.js             | main        |  44.78 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       |  Raw size
+chunk-WTT4OACF.mjs  | -           |  45.22 kB | 
+server.mjs          | server      |   1.39 kB | 
+main.server.mjs     | main.server | 800 bytes | 
+
+Application bundle generation complete. [0.385 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       |  Raw size
+main.js             | main        |  44.77 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       |  Raw size
+chunk-H5XQB4VC.mjs  | -           |  45.21 kB | 
+server.mjs          | server      |   1.39 kB | 
+main.server.mjs     | main.server | 800 bytes | 
+
+Application bundle generation complete. [0.389 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       |  Raw size
+main.js             | main        |  44.71 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       |  Raw size
+chunk-V7DGO5CO.mjs  | -           |  45.15 kB | 
+server.mjs          | server      |   1.39 kB | 
+main.server.mjs     | main.server | 800 bytes | 
+
+Application bundle generation complete. [0.416 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       |  Raw size
+main.js             | main        |  44.71 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       |  Raw size
+chunk-EZZDG4ZV.mjs  | -           |  45.15 kB | 
+server.mjs          | server      |   1.39 kB | 
+main.server.mjs     | main.server | 800 bytes | 
+
+Application bundle generation complete. [0.365 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+
+No output file changes.
+
+Application bundle generation complete. [0.280 seconds]
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       |  Raw size
+main.js             | main        |  44.70 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       |  Raw size
+chunk-67YMHTGC.mjs  | -           |  45.14 kB | 
+server.mjs          | server      |   1.39 kB | 
+main.server.mjs     | main.server | 800 bytes | 
+
+Application bundle generation complete. [0.363 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       |  Raw size
+main.js             | main        |  44.66 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       |  Raw size
+chunk-CVN3J47J.mjs  | -           |  45.10 kB | 
+server.mjs          | server      |   1.39 kB | 
+main.server.mjs     | main.server | 800 bytes | 
+
+Application bundle generation complete. [0.363 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       |  Raw size
+main.js             | main        |  44.62 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       |  Raw size
+chunk-RJW5YYI3.mjs  | -           |  45.06 kB | 
+server.mjs          | server      |   1.39 kB | 
+main.server.mjs     | main.server | 800 bytes | 
+
+Application bundle generation complete. [0.304 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       |  Raw size
+main.js             | main        |  44.59 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       |  Raw size
+chunk-C7A2LV23.mjs  | -           |  45.02 kB | 
+server.mjs          | server      |   1.39 kB | 
+main.server.mjs     | main.server | 800 bytes | 
+
+Application bundle generation complete. [0.297 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       |  Raw size
+main.js             | main        |  44.55 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       |  Raw size
+chunk-5XZH6AWG.mjs  | -           |  44.99 kB | 
+server.mjs          | server      |   1.39 kB | 
+main.server.mjs     | main.server | 800 bytes | 
+
+Application bundle generation complete. [0.413 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       |  Raw size
+main.js             | main        |  44.52 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       |  Raw size
+chunk-2VPR7HXM.mjs  | -           |  44.96 kB | 
+server.mjs          | server      |   1.39 kB | 
+main.server.mjs     | main.server | 800 bytes | 
+
+Application bundle generation complete. [0.346 seconds]
 
 Page reload sent to client(s).
