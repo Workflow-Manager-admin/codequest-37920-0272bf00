@@ -3,23 +3,23 @@
   max-width: 97vw;
   margin: 0 auto 2vh auto;
   border-radius: 2.1rem;
-  background: rgba(31, 41, 55, 0.33);
+  background: rgba(16, 22, 42, 0.38);
   display: flex;
   flex-direction: column;
   align-items: center;
   position: relative;
-  box-shadow: 0 0 40px 8px #00f2fe48, 0 4px 22px 0 #25fcff33, 0 0 34px 10px #b25dff21;
-  border: 2.2px solid var(--neon-magenta);
-  backdrop-filter: blur(18px);
-  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 0 48px 12px #22e8ff57, 0 4px 28px 0 #20e9ff37, 0 0 31px 10px #8c3fff32;
+  border: 2.5px solid var(--neon-purple);
+  backdrop-filter: blur(19px);
+  -webkit-backdrop-filter: blur(19px);
   z-index: 4;
   overflow: visible;
-  transition: box-shadow 0.28s, border 0.24s;
+  transition: box-shadow 0.28s, border 0.26s;
   cursor: pointer;
 }
 .ninja-cut-hero-glassy:hover {
-  box-shadow: 0 0 52px 10px #19f9ff66, 0 8px 32px -8px #b25dffc6, 0 0 12px 0 #25fcff66;
-  border: 2.2px solid var(--neon-blue);
+  box-shadow: 0 0 61px 14px #19f9ff89, 0 10px 37px -8px #8c3fffb3, 0 0 18px 0 #20e9ff77;
+  border: 2.9px solid var(--neon-blue);
 }
 .ninja-svg {
   width: 100%;
@@ -73,19 +73,18 @@
   flex-direction: column;
   align-items: center;
   margin: -13px auto 6px auto;
-  background: rgba(20, 34, 56, 0.13);
-  box-shadow: 0 2px 12px 5px #38cfff33, 0 0 22px 1px #b25dff21;
-  border-radius: 17px;
-  padding: .9em 1.5em .7em 1.5em;
-  border: 1.5px solid var(--neon-purple);
+  background: rgba(18, 32, 54, 0.15);
+  box-shadow: 0 2px 19px 5px #22e8ff23, 0 0 32px 1px #8c3fff28;
+  border-radius: 19px;
+  padding: .92em 1.7em .75em 1.7em;
+  border: 2px solid var(--neon-cyan);
   position: absolute;
   left: 50%;
   top: 42px;
   transform: translateX(-50%);
   z-index: 8;
   font-family: 'Oxanium', 'Inter Tight', 'Segoe UI', Arial, sans-serif;
-  box-shadow: 0 0 24px 1px #19f9ff32, 0 3px 11px #b25dff42;
-  background: linear-gradient(97deg,rgba(31,38,67,0.98) 56%,rgba(100,19,255,0.03) 99%);
+  background: linear-gradient(96deg, rgba(31,38,74,0.97) 70%, rgba(0,255,247,0.08) 100%);
 }
 .cut-exclam {
   color: var(--neon-blue);

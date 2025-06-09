@@ -3,31 +3,30 @@
 :root {
   --primary: #101228;
   --secondary: #131829;
-  --accent: #211f38;
+  --accent: #202149;
 
-  /* Neon/gaming color palette - rich blues, cyans, purples, magentas, some acid green */
-  --neon: #37cfff;
-  --neon-blue: #25fcff;
-  --neon-green: #07ffaa;
-  --neon-purple: #b25dff;
-  --neon-cyan: #19f9ff;
-  --neon-magenta: #be40ff;
-  --neon-red: #ff337b;
-  --neon-amber: #f7cf43;
+  /* Neon/cyber colors enhance - focus on blue/cyan/purple, eliminate pink/magenta */
+  --neon: #36f3ff;
+  --neon-blue: #22f7ff;
+  --neon-green: #09ffcc;
+  --neon-purple: #8c3fff;
+  --neon-cyan: #14f3fa;
+  /* Remove all magenta/pink, reinforce hues for a pure cyber feel; add deeper blue and cyber-amber for accent */
+  --neon-deep-blue: #111abb;
+  --neon-red: #ff229c;
+  --neon-amber: #f7df43;
 
-  /* Discard pink, transition accent to blue/purple/cyan */
-  --neon-pink: #27b4ff; /* value now matches --neon-blue for consistent re-theming */
-
-  --glassy-bg: rgba(28, 34, 65, 0.77);
-  --frosted-bg: rgba(20, 32, 62, 0.23);
+  --glassy-bg: rgba(22, 28, 48, 0.80);
+  --frosted-bg: rgba(17, 35, 60, 0.32);
 
   --blur: 29px;
-  --dark-bg: #05081b;
-  --border: rgba(37,252,255,0.13);
-  --shadow: 0 12px 56px 0 rgba(2,30,54,0.46), 0 2px 44px #18216011;
+  --dark-bg: #090d28;
+  --border: rgba(34,255,255,0.18);
+  --shadow: 0 12px 56px 0 rgba(2,23,53,0.52), 0 2px 56px #1a21aa22;
   --card-radius: 2.3rem;
   --font-title: 'Oxanium', 'Inter Tight', 'Segoe UI', Arial, sans-serif;
 }
+
 
 
 @keyframes star-twinkle {
