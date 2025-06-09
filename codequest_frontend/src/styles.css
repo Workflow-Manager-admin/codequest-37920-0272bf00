@@ -5,25 +5,25 @@
   --secondary: #131829;
   --accent: #211f38;
 
-  /* Essential Neon/gaming palette (converted from pinks to blues/cyans/purples) */
-  --neon: #40fefb;
-  --neon-blue: #38cfff;
-  --neon-green: #3fffa8;
-  --neon-purple: #9a4eff;
-  --neon-cyan: #16f0fd;
-  --neon-magenta: #cc4df4;
-  --neon-red: #ff3355;
+  /* Neon/gaming color palette - rich blues, cyans, purples, magentas, some acid green */
+  --neon: #37cfff;
+  --neon-blue: #25fcff;
+  --neon-green: #07ffaa;
+  --neon-purple: #b25dff;
+  --neon-cyan: #19f9ff;
+  --neon-magenta: #be40ff;
+  --neon-red: #ff337b;
   --neon-amber: #f7cf43;
 
-  /* Pink is now neutralized for unveilling --neon-purple or --neon-blue as accent */
-  --neon-pink: #6f46c6;
+  /* Discard pink, transition accent to blue/purple/cyan */
+  --neon-pink: #27b4ff; /* value now matches --neon-blue for consistent re-theming */
 
-  --glassy-bg: rgba(25, 30, 54, 0.77);
-  --frosted-bg: rgba(24, 30, 56, 0.28);
+  --glassy-bg: rgba(28, 34, 65, 0.77);
+  --frosted-bg: rgba(20, 32, 62, 0.23);
 
   --blur: 29px;
   --dark-bg: #05081b;
-  --border: rgba(64,255,251,0.16);
+  --border: rgba(37,252,255,0.13);
   --shadow: 0 12px 56px 0 rgba(2,30,54,0.46), 0 2px 44px #18216011;
   --card-radius: 2.3rem;
   --font-title: 'Oxanium', 'Inter Tight', 'Segoe UI', Arial, sans-serif;

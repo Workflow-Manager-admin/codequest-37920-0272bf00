@@ -116,9 +116,9 @@ import { CommonModule } from '@angular/common';
         <g *ngIf="cutActive()">
           <rect x="129" y="71" width="117" height="32" rx="15"
               fill="url(#glasscut)" filter="url(#cardblur)"/>
-          <text x="145" y="93" font-size="22" font-family="Inter,sans-serif"
-            fill="#ed21fa" font-weight="bolder" opacity="0.95">CodeQuest!</text>
-          <path d="M239,115 L168,87" stroke="#fb3640" stroke-width="4.6" filter="url(#cutglow)"/>
+          <text x="145" y="93" font-size="22" font-family="Oxanium,Inter,sans-serif"
+            fill="#25fcff" font-weight="bolder" opacity="0.99" style="filter: drop-shadow(0 0 11px #19f9ffbb) drop-shadow(0 2px 8px #b25dffcc); letter-spacing:0.06em;">CodeQuest!</text>
+          <path d="M239,115 L168,87" stroke="#25fcff" stroke-width="4.6" filter="url(#cutglow)"/>
         </g>
         <defs>
           <filter id="bodyshadow" x="-20%" y="-25%" width="140%" height="140%">
@@ -155,8 +155,9 @@ import { CommonModule } from '@angular/common';
             <stop offset="1" stop-color="#6a5740"/>
           </linearGradient>
           <linearGradient id="glasscut" x1="129" y1="97" x2="246" y2="75" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#ed21fa" stop-opacity="0.22"/>
-            <stop offset="1" stop-color="#fff" stop-opacity="0.42"/>
+            <stop stop-color="#25fcff" stop-opacity="0.34"/>
+            <stop offset="0.42" stop-color="#b25dff" stop-opacity="0.16"/>
+            <stop offset="1" stop-color="#fff" stop-opacity="0.38"/>
           </linearGradient>
         </defs>
       </svg>
