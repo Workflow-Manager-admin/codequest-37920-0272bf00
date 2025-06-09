@@ -9,6 +9,10 @@
   transition: background 0.37s cubic-bezier(0.36,.41,.4,1.04);
   isolation: isolate;
   box-shadow: 0 0 190px 0 #000c inset;
+  /* Parallax vars for ::before ninja shadow bg */
+  --ninjashadow-x: 0px;
+  --ninjashadow-y: 0px;
+  --shadow-opacity: 0.19;
 }
 .app-background::before {
   content: "";
@@ -16,12 +20,15 @@
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 0;
   background: url("/assets/shadow_ninja_bg.svg") center bottom/cover no-repeat;
-  opacity: 0.19;
+  /* Parallax: move bg image subtly with CSS vars set by app code */
+  background-position:
+    calc(50% + var(--ninjashadow-x, 0px)) calc(100% + var(--ninjashadow-y, 0px));
+  opacity: var(--shadow-opacity, 0.19);
   pointer-events: none;
   mix-blend-mode: lighten;
   filter: blur(0.4px) drop-shadow(0 22px 36px #05233b99);
   box-shadow: 0 0 222px #149bd966 inset;
-  transition: opacity 0.4s;
+  transition: opacity 0.4s, background-position 0.5s cubic-bezier(0.3,0.8,0.6,1.0);
   animation: ninja-bg-float 16s cubic-bezier(0.34,0.81,0.5,1) infinite alternate;
 }
 @media (max-width: 700px) {

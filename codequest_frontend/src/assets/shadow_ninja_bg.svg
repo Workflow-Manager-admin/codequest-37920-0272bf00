@@ -1,29 +1,32 @@
-<svg width="920" height="780" viewBox="0 0 920 780" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <g opacity="0.82">
-    <!-- Main ninja shadow shape (silhouette only, no color/no stroke, large, soft edges) -->
-    <ellipse cx="470" cy="420" rx="390" ry="310" fill="#000" fill-opacity="0.55" filter="url(#blurmain)"/>
-    <g opacity="0.78">
-      <!-- Body (torso, arms, sword hint)—rough shadow only for parallax effect -->
-      <ellipse cx="470" cy="372" rx="178" ry="213" fill="#000" />
-      <ellipse cx="340" cy="500" rx="56" ry="32" fill="#000"/>
-      <ellipse cx="600" cy="473" rx="58" ry="38" fill="#000"/>
-      <!-- Shadow head (round) -->
-      <ellipse cx="470" cy="222" rx="67" ry="63" fill="#000"/>
-      <!-- Sword shadow (large blur) -->
-      <rect x="738" y="220" width="25" height="330" rx="12" transform="rotate(15 750 220)" fill="#000" fill-opacity="0.5" filter="url(#blur2)"/>
-      <!-- Ninja wraps (scarf, hinting) -->
-      <ellipse cx="380" cy="190" rx="23" ry="11" fill="#000" fill-opacity="0.64"/>
-      <ellipse cx="555" cy="180" rx="22" ry="10" fill="#000" fill-opacity="0.62"/>
-    </g>
-    <!-- Lower shadow -->
-    <ellipse cx="470" cy="675" rx="220" ry="56" fill="#00142c" fill-opacity="0.18"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none">
+  <!-- Oversized ninja in stylized fighting stance, using layered shadow gradients for realism -->
+  <g>
+    <!-- Body shadow -->
+    <ellipse cx="800" cy="820" rx="235" ry="45" fill="#000" opacity="0.22"/>
+    <!-- Ninja silhouette (vector blend: headband, cowl, sword raised, one knee bent) -->
+    <path d="M870,180 q48,-84 136,-45 q36,15 60,25 q32,12 41,44 q13,36 -24,61 q-25,18 -61,13 
+      m37,-64 q34,25 72,50 q14,9 30,5 q14,-3 22,-11 q9,-10 4,-26 q-10,-27 -37,-36 q-40,-13 -76,25
+      M945,300 q14,-40 -17,-61 q-21,-14 -37,-7 q-18,8 -20,32 q-3,31 27,43 q33,14 47,-7z
+      M850,240 q-21,-30 -67,-36 q-44,-5 -78,16 q-28,17 -29,46 q-2,28 37,53 q34,21 65,25 q58,7 81,-18
+      m-163,55 q-43,27 -111,37 q-35,6 -63,-4 q-40,-15 -36,-52 q7,-60 78,-87 q84,-31 137,39
+      m-141,154 q-64,85 -53,136 q8,33 38,33 q41,1 42,-48
+      m568,20 q33,15 77,18 q40,2 53,-18 q17,-25 3,-57 q-20,-44 -94,-65 q-36,-10 -70,17
+      m117,78 q46,76 18,127 q-17,28 -54,23 q-49,-9 -25,-59
+      M945,380 q-19,60 -71,108 q-52,47 -40,131 q6,37 39,32 q32,-4 27,-50
+      m152,30 q32,87 13,116 q-15,22 -45,13 q-40,-12 -12,-66
+      M781,460 q-11,71 41,132 q53,62 109,45 q42,-12 24,-59
+      m-232,120 q-35,72 -15,120 q19,41 62,19 q50,-25 21,-101" 
+      fill="#000" opacity="0.37" style="filter:url(#blur)" />
+    <!-- Sword silhouette (angle up, subtle blur) -->
+    <rect x="1100" y="80" width="26" height="310" rx="10"
+      fill="#000" opacity="0.19"
+      transform="rotate(22,1110,235)" filter="url(#f1)"/>
+    <!-- Headband tail -->
+    <path d="M930,110 q-60,-50 -92,-100 q12,37 49,98"
+      stroke="#000" stroke-width="24" opacity="0.15" fill="none" />
+    <defs>
+      <filter id="blur"><feGaussianBlur stdDeviation="6"/></filter>
+      <filter id="f1"><feGaussianBlur stdDeviation="2"/></filter>
+    </defs>
   </g>
-  <defs>
-    <filter id="blurmain" x="-110" y="48" width="1160" height="749" filterUnits="userSpaceOnUse">
-      <feGaussianBlur stdDeviation="27"/>
-    </filter>
-    <filter id="blur2" x="730" y="216" width="41" height="337" filterUnits="userSpaceOnUse">
-      <feGaussianBlur stdDeviation="7.6"/>
-    </filter>
-  </defs>
 </svg>
