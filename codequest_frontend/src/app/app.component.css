@@ -1,72 +1,51 @@
-/* ===== GAMING NIGHT THEME for CodeQuest DASHBOARD ===== */
-
-/* Night-sky CSS variables with deep neon, glass, neon accents & intensity */
-:root {
-  --primary: #151822;
-  --secondary: #263346;
-  --accent: #181a20;
-
-  --neon: #00ffe9;
-  --neon-pink: #ff2efc;
-  --neon-red: #fd2451;
-  --neon-green: #31ffd5;
-  --glassy-bg: rgba(24, 22, 39, 0.52);
-  --frosted-bg: rgba(38, 51, 70, 0.17);
-  --blur: 21px;
-  --dark-bg: #0f111a;
-  --border: rgba(120,255,245,0.13);
-  --shadow: 0 8px 40px 0 rgba(0,0,0,0.21);
-  --card-radius: 1.7rem;
-  --font-title: 'Inter Tight', 'Oxanium', 'Segoe UI', Arial, sans-serif;
-}
-
-/* Night sky with animated stars and moving shadow ninja using before/after */
 .app-background {
   min-height: 100vh;
   position: relative;
   overflow-x: hidden;
-  background: linear-gradient(130deg, var(--primary) 42%, #13152a 90%) !important;
-  color: #eef6ff;
+  background:
+    linear-gradient(122deg, #101328 0%, #171d3c 38%, #201a3c 61%, #182449 86%, var(--dark-bg) 100%) !important;
+  color: #def2fa;
   font-family: var(--font-title);
-  transition: background 0.3s;
+  transition: background 0.37s cubic-bezier(0.36,.41,.4,1.04);
   isolation: isolate;
+  box-shadow: 0 0 190px 0 #000c inset;
 }
-
 .app-background::before {
-  /* Moving large shadow ninja (responsive) */
   content: "";
   position: fixed;
   top: 0; left: 0; right: 0; bottom: 0;
   z-index: 0;
-  background: url("/assets/shadow_ninja_bg.svg") center bottom/contain no-repeat;
-  opacity: 0.13;
+  background: url("/assets/shadow_ninja_bg.svg") center bottom/cover no-repeat;
+  opacity: 0.19;
   pointer-events: none;
   mix-blend-mode: lighten;
+  filter: blur(0.4px) drop-shadow(0 22px 36px #05233b99);
+  box-shadow: 0 0 222px #149bd966 inset;
   transition: opacity 0.4s;
-  animation: ninja-bg-float 18s cubic-bezier(0.34,0.81,0.5,1) infinite alternate;
+  animation: ninja-bg-float 16s cubic-bezier(0.34,0.81,0.5,1) infinite alternate;
 }
 @media (max-width: 700px) {
   .app-background::before {
-    background-size: 160% auto;
-    bottom: -10vw;
-    opacity: 0.09;
+    background-size: 168% auto;
+    bottom: -16vw;
+    opacity: 0.11;
   }
 }
-
-/* Animated night sky layer */
 .app-background::after {
   content: "";
   position: fixed;
   inset: 0;
   z-index: 1;
   background:
-    radial-gradient(ellipse at 60% 18%, #2c437cbb 0%, transparent 75%) 0 0/100vw 100vh no-repeat,
-    linear-gradient(180deg, #0f111a 80%, #181a38c2 100%) 0 0/100vw 100vh no-repeat,
+    radial-gradient(ellipse at 62% 18%, #38619add 0%, #222d5893 36%, transparent 79%) 0 0/100vw 100vh no-repeat,
+    radial-gradient(ellipse at 82% 16%, #1be7f8a4 0%, transparent 69%) 0 0/100vw 100vh no-repeat,
+    linear-gradient(184deg, #0b0c23 77%, #1d1841c2 100%) 0 0/100vw 100vh no-repeat,
     transparent;
-  /* Add stars with an SVG, using filter for twinkle effect */
   pointer-events: none;
+  box-shadow: 0 0 66px 13px #121466cc inset;
 }
 
+/* Night sky/stars (canvas) */
 .night-sky-stars {
   position: fixed;
   top:0; left: 0; width: 100vw; height: 100vh;
@@ -80,65 +59,36 @@
   }
 }
 
-/* Animate stars - shimmer & drift */
-.star {
-  position: absolute;
-  border-radius: 50%;
-  opacity: .66;
-  background: white;
-  box-shadow: 
-    0 0 4px 1.5px #00fffbaa,
-    0 0 7px 0 #00f2fe66;
-  will-change: opacity, transform;
-  animation: star-twinkle 2.6s infinite, star-drift 48s linear infinite;
-}
-
-@keyframes star-twinkle {
-  0%,100% { opacity: .15; }
-  38% { opacity: .82; }
-  62% { opacity: .31; }
-}
-@keyframes star-drift {
-  from { transform: translateY(0); }
-  to { transform: translateY(40px);}
-}
-
-@keyframes ninja-bg-float {
-  0% { filter: blur(0.2px) drop-shadow(0 10px 22px #0003); }
-  40% { transform: translate(-20px, 0) scale(1.01);}
-  60% { transform: translate(24px, 12px) scale(1.01);}
-  100% { filter: blur(1px) drop-shadow(0 22px 12px #1135), }
-}
-
-/* Dark mode overrides */
-.app-background.dark-mode {
-  background: linear-gradient(120deg, #090b12 60%, #202247 100%);
-  color: #e8f7ff;
-}
-
-
+/* Appbar styles */
 .appbar-glassy {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.65rem 2.5vw;
+  padding: 0.85rem 2.7vw;
   background: var(--glassy-bg);
-  box-shadow: var(--shadow);
-  border-bottom: 1px solid var(--border);
+  box-shadow:
+    0 5px 14px 0 var(--neon) inset,
+    0 2px 44px #39fffdaa,
+    0 14px 36px 0 #26294355,
+    0 1.5px 8px 0 var(--neon-pink),
+    var(--shadow);
+  border-bottom: 2.2px solid var(--border);
   backdrop-filter: blur(var(--blur));
   -webkit-backdrop-filter: blur(var(--blur));
   z-index: 20;
   position: sticky;
   top: 0;
+  outline: 1.1px solid var(--neon-pink);
 }
 
 .brand-logo {
-  font-size: 2rem;
-  font-weight: 800;
+  font-size: 2.26rem;
+  font-weight: 900;
   text-transform: uppercase;
-  letter-spacing: .07rem;
+  letter-spacing: .1rem;
   color: var(--neon-pink);
-  text-shadow: 0 0 8px var(--neon-pink), 0 2px 2px #14001077;
+  text-shadow: 0 0 16px var(--neon-pink), 0 3px 6px #3b043377, 0 0 9px #00fff6;
+  filter: saturate(1.22) brightness(1.19) drop-shadow(0 0 11px #ff36ff);
 }
 
 .theme-toggle-btn {
@@ -163,6 +113,10 @@
   flex-direction: column;
   align-items: center;
   gap: 2.5vw;
+  box-shadow: 0 24px 128px 0 #0affdc19 inset, 0 7px 99px 7px #0c0b1b49 inset;
+  background: none;
+  position: relative;
+  z-index: 3;
 }
 
 .ninja-hero-wrap {
@@ -187,65 +141,97 @@
 
 /* Glass morphism Card styles */
 .glass-card {
-  background: var(--frosted-bg);
-  box-shadow: var(--shadow);
+  background:
+    linear-gradient(140deg, rgba(44,52,97,0.24) 25%, rgba(135,40,231,0.09) 74%, rgba(49,255,213,0.10) 100%),
+    var(--frosted-bg);
+  box-shadow: 0 6px 54px 0 #00fffb20, 0 2.5px 28px 0 #09ffd940, var(--shadow);
   border-radius: var(--card-radius);
-  border: 1.5px solid var(--border);
-  padding: 2rem 1.4rem;
+  border: 1.8px solid var(--border);
+  padding: 2.25rem 1.6rem;
   backdrop-filter: blur(var(--blur));
   -webkit-backdrop-filter: blur(var(--blur));
   text-align: center;
   position: relative;
   overflow: hidden;
-  transition: box-shadow .25s, transform .15s, border .25s;
+  transition: box-shadow .25s, transform .15s, border .25s, background 0.29s;
+  outline: 0.7px solid rgba(255,255,255,0.07);
+  font-smooth: always;
+  will-change: box-shadow, border, background;
 }
 .glass-card:hover {
-  box-shadow: 0 0 24px 1px var(--neon-pink), 0 8px 36px -4px #1f193033;
-  border: 1.5px solid var(--neon);
-  transform: translateY(-5px) scale(1.022);
-  z-index: 2;
+  box-shadow:
+    0 0 44px 4px var(--neon-pink),
+    0 14px 58px -4px #1f193088,
+    0 0px 66px 2px var(--neon-green),
+    0 6px 44px 1px var(--neon),
+    var(--shadow);
+  border: 2.1px solid var(--neon);
+  background: linear-gradient(120deg, #23294f66 48%, #26294322 87%, #38ffc080 100%);
+  transform: translateY(-10px) scale(1.038);
+  z-index: 6;
 }
 
 .glass-card h2 {
   margin: 0 0 10px 0;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   color: var(--neon);
-  font-weight: 600;
-  letter-spacing: 0.01em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-shadow: 0 0 12px var(--neon-blue), 0 2px 5px #00f7ff25;
+  filter: brightness(1.15);
 }
 .card-value {
-  font-size: 2.6rem;
-  font-weight: 800;
+  font-size: 2.8rem;
+  font-weight: 900;
   color: #fff;
-  margin-bottom: 0.4em;
-  transition: color 0.2s;
+  margin-bottom: 0.45em;
+  letter-spacing: 0.03em;
+  transition: color 0.22s;
+  text-shadow: 0 0 16px var(--neon-blue), 0 2px 12px var(--neon-green);
+  filter: brightness(1.14);
 }
 .card-value.points {
   color: var(--neon-green);
+  text-shadow: 0 0 28px var(--neon-green), 0 2px 12px var(--neon), 0 3px 8px #00ffeb44;
+  filter: contrast(1.22) brightness(1.12);
 }
 .neon-border {
-  box-shadow: 0 0 0 1.5px var(--neon),
-              0 0 18px 0 var(--neon);
+  box-shadow:
+    0 0 0 2px var(--neon),
+    0 0 22px 2px var(--neon),
+    0 0 2px 0 var(--neon-pink);
+  border: 1.7px solid var(--neon);
+  outline: 0.5px solid #3ff0ee55;
 }
 .neon-border.accent {
-  box-shadow: 0 0 0 1.5px var(--neon-green),
-              0 0 18px 0 var(--neon-green);
+  box-shadow:
+    0 0 0 2px var(--neon-green),
+    0 0 28px 2px var(--neon-green),
+    0 0 4px 0 var(--neon-blue);
+  border: 1.8px solid var(--neon-green);
+  outline: 0.5px solid #64ffd899;
 }
 .neon-border.danger {
-  box-shadow: 0 0 0 1.5px var(--neon-red),
-              0 0 22px 0 var(--neon-red);
+  box-shadow:
+    0 0 0 2.2px var(--neon-red),
+    0 0 28px 2px var(--neon-red),
+    0 0 4px 0 var(--neon-amber);
+  border: 1.9px solid var(--neon-red);
+  outline: 0.5px solid #ffc9d088;
 }
 .neon-border.redeem {
-  box-shadow: 0 0 0 1.5px var(--neon-pink),
-              0 0 18px 0 var(--neon-pink);
+  box-shadow:
+    0 0 0 2px var(--neon-pink),
+    0 0 23px 1.5px var(--neon-pink),
+    0 0 4px 0 var(--neon);
+  border: 1.8px solid var(--neon-pink);
+  outline: 0.5px solid #ffbfff66;
 }
-
 #redeem-card .card-value {
   font-size: 2.1rem;
   color: var(--neon-pink);
 }
 
-/* Glass Frosted Utility Bar */
 .glass-bar {
   background: var(--frosted-bg);
   backdrop-filter: blur(10px);
@@ -269,7 +255,6 @@
   padding-right: 0.5em;
   animation: flashy 2.6s infinite alternate;
 }
-
 .streak {
   color: #ffb13b;
 }
@@ -316,42 +301,42 @@
 
 /* Footer */
 .app-footer {
-  font-size: 1.02rem;
+  font-size: 1.05rem;
   justify-content: space-between;
   width: 98%;
   margin: 1.5em auto 0 auto;
-  border-radius: 1.4em 1.4em 0 0;
-  background: var(--glassy-bg);
-  box-shadow: 0 0px 32px 0 #222a3344;
-  border-top: 1.5px solid var(--border);
+  border-radius: 1.5em 1.5em 0 0;
+  background:
+    linear-gradient(92deg, #1e114755 47%, #2b1e45a8 98%),
+    var(--glassy-bg);
+  box-shadow:
+    0 3px 26px 0 #222a3377,
+    0 0px 42px 0 #552a9377;
+  border-top: 2px solid var(--border);
   z-index: 11;
-  padding: 1em 3vw;
+  padding: 1.17em 3vw 1em 3vw;
+  filter: brightness(1.03) saturate(1.12);
 }
 .footer-accent {
   color: var(--neon-green);
-  font-weight: 700;
-  letter-spacing: 0.06em;
+  font-weight: 800;
+  letter-spacing: 0.10em;
+  text-shadow: 0 0 8px #39ffd4ad;
+  filter: saturate(1.12) brightness(1.24);
 }
 .app-footer nav a {
-  margin-left: 1em;
+  margin-left: 1.1em;
   color: var(--neon-pink);
   text-decoration: none;
-  transition: color 0.17s;
+  transition: color 0.17s, text-shadow 0.17s;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  filter: saturate(1.2);
 }
 .app-footer nav a.neon-link:hover {
   color: var(--neon);
-  text-shadow: 0 2px 10px var(--neon);
-}
-
-/* Animations for confetti/streak */
-@keyframes flashy {
-  from { opacity: 0.70; filter: blur(0.6px);}
-  to   { opacity: 1;   filter: blur(0);}
-}
-@keyframes popfade {
-  0% { transform: scale(1.25); opacity: 0;}
-  60% {transform: scale(1.00); opacity: 1;}
-  100% {transform: scale(1); opacity: 0.1;}
+  text-shadow: 0 2.5px 17px var(--neon), 0 0 6px var(--neon-pink);
+  filter: brightness(1.22);
 }
 
 /* Responsive design */
