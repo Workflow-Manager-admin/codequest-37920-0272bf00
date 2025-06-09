@@ -6,178 +6,105 @@ Warning: Running a server with --disable-host-check is a security risk. See http
 The "disableHostCheck" option will not be used because it is not supported by the "@angular-devkit/build-angular:application" builder.
 ❯ Building...
 ✔ Building...
-Application bundle generation failed. [3.540 seconds]
-
-✘ [ERROR] TS2307: Cannot find module './ninja3d.component' or its corresponding type declarations. [plugin angular-compiler]
-
-    src/app/app.component.ts:4:33:
-      4 │ import { Ninja3dComponent } from './ninja3d.component';
-        ╵                                  ~~~~~~~~~~~~~~~~~~~~~
-
-
-✘ [ERROR] Could not resolve "./ninja3d.component"
-
-    src/app/app.component.ts:5:33:
-      5 │ import { Ninja3dComponent } from './ninja3d.component';
-        ╵                                  ~~~~~~~~~~~~~~~~~~~~~
-
-
-✘ [ERROR] TS-991010: 'imports' must be an array of components, directives, pipes, or NgModules.
-  Value is of type '[CommonModule, RouterOutlet, (not statically analyzable)]'. [plugin angular-compiler]
-
-    src/app/app.component.ts:9:11:
-      9 │   imports: [CommonModule, RouterOutlet, Ninja3dComponent],
-        ╵            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-✘ [ERROR] Could not resolve "./ninja3d.component"
-
-    src/app/app.component.ts:5:33:
-      5 │ import { Ninja3dComponent } from './ninja3d.component';
-        ╵                                  ~~~~~~~~~~~~~~~~~~~~~
-
-
-Watch mode enabled. Watching for file changes...
-❯ Changes detected. Rebuilding...
-✔ Changes detected. Rebuilding...
-Application bundle generation failed. [0.882 seconds]
-
-▲ [WARNING] NG8109: isSwinging is a function and should be invoked: isSwinging() [plugin angular-compiler]
-
-    src/app/ninjacut.component.ts:11:35:
-      11 │ ...    [class.animate-swing]="isSwinging" (animationend)="onSwingE...
-         ╵                               ~~~~~~~~~~
-
-
-▲ [WARNING] NG8103: The `*ngIf` directive was used in the template, but neither the `NgIf` directive nor the `CommonModule` was imported. Use Angular's built-in control flow @if or make sure that either the `NgIf` directive or the `CommonModule` is included in the `@Component.imports` array of this component. [plugin angular-compiler]
-
-    src/app/ninjacut.component.ts:42:19:
-      42 │             <path *ngIf="isSwinging"
-         ╵                    ~~~~
-
-
-▲ [WARNING] NG8103: The `*ngIf` directive was used in the template, but neither the `NgIf` directive nor the `CommonModule` was imported. Use Angular's built-in control flow @if or make sure that either the `NgIf` directive or the `CommonModule` is included in the `@Component.imports` array of this component. [plugin angular-compiler]
-
-    src/app/ninjacut.component.ts:67:12:
-      67 │         <g *ngIf="cutActive">
-         ╵             ~~~~
-
-
-▲ [WARNING] NG8103: The `*ngIf` directive was used in the template, but neither the `NgIf` directive nor the `CommonModule` was imported. Use Angular's built-in control flow @if or make sure that either the `NgIf` directive or the `CommonModule` is included in the `@Component.imports` array of this component. [plugin angular-compiler]
-
-    src/app/ninjacut.component.ts:93:80:
-      93 │ ...s! <span class="swing-signal" *ngIf="isSwinging">⚡</span></span>
-         ╵                                   ~~~~
-
-
-✘ [ERROR] NG8002: Can't bind to 'ngClass' since it isn't a known property of ':svg:g'. [plugin angular-compiler]
-
-    src/app/ninjacut.component.ts:34:35:
-      34 │ ...<g class="sword-arm-group" [ngClass]="{ 'swinging': isSwinging }">
-         ╵                               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-
-✘ [ERROR] TS2339: Property 'value' does not exist on type 'WritableSignal<boolean>'. [plugin angular-compiler]
-
-    src/app/ninjacut.component.ts:109:24:
-      109 │     if (this.isSwinging.value) return;
-          ╵                         ~~~~~
-
-
-✘ [ERROR] TS2339: Property 'value' does not exist on type 'WritableSignal<boolean>'. [plugin angular-compiler]
-
-    src/app/ninjacut.component.ts:110:20:
-      110 │     this.isSwinging.value = true;
-          ╵                     ~~~~~
-
-
-✘ [ERROR] TS2339: Property 'value' does not exist on type 'WritableSignal<boolean>'. [plugin angular-compiler]
-
-    src/app/ninjacut.component.ts:112:21:
-      112 │       this.cutActive.value = true; // Show cut halfway through swing
-          ╵                      ~~~~~
-
-
-✘ [ERROR] TS2339: Property 'value' does not exist on type 'WritableSignal<boolean>'. [plugin angular-compiler]
-
-    src/app/ninjacut.component.ts:115:21:
-      115 │       this.cutActive.value = false;
-          ╵                      ~~~~~
-
-
-✘ [ERROR] TS2339: Property 'value' does not exist on type 'WritableSignal<boolean>'. [plugin angular-compiler]
-
-    src/app/ninjacut.component.ts:121:20:
-      121 │     this.isSwinging.value = false;
-          ╵                     ~~~~~
-
-
-✘ [ERROR] TS2339: Property 'value' does not exist on type 'WritableSignal<boolean>'. [plugin angular-compiler]
-
-    src/app/ninjacut.component.ts:122:19:
-      122 │     this.cutActive.value = false;
-          ╵                    ~~~~~
-
-
-❯ Changes detected. Rebuilding...
-✔ Changes detected. Rebuilding...
 Browser bundles     
 Initial chunk files  | Names            |  Raw size
 polyfills.js         | polyfills        |  90.20 kB | 
-main.js              | main             |  29.63 kB | 
+main.js              | main             |  29.60 kB | 
 styles.css           | styles           |  95 bytes | 
 
-                     | Initial total    | 119.92 kB
+                     | Initial total    | 119.90 kB
 
 
 Server bundles      
 Initial chunk files  | Names            |  Raw size
 polyfills.server.mjs | polyfills.server | 572.91 kB | 
-chunk-L6EO7CAN.mjs   | -                |  30.06 kB | 
+chunk-PXTAUCYH.mjs   | -                |  30.04 kB | 
 server.mjs           | server           |   1.39 kB | 
 main.server.mjs      | main.server      | 800 bytes | 
 
-Application bundle generation complete. [0.924 seconds]
+Application bundle generation complete. [3.058 seconds]
 
+Watch mode enabled. Watching for file changes...
 NOTE: Raw file sizes do not reflect development server per-request transformations.
-4:28:34 PM [vite] (client) Re-optimizing dependencies because vite config has changed
-4:28:34 PM [vite] (ssr) Re-optimizing dependencies because vite config has changed
-An unhandled exception occurred: Port 3000 is already in use
-See "/tmp/ng-2xkGNERROR ReferenceError: window is not defined
-    at CommonModule (/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/src/app/ninjacut.component.ts:127:5)
-    at callHookInternal (/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-62672OIL.js:14784:10)
-    at callHook (/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-62672OIL.js:14799:7)
-    at callHooks (/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-62672OIL.js:14773:9)
-    at executeInitAndCheckHooks (/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-62672OIL.js:14742:5)
-    at selectIndexInternal (/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-62672OIL.js:19416:9)
-    at Module.ɵɵadvance (/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-62672OIL.js:19402:3)
-    at CommonModule (/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/src/app/app.component.html:19:33)
-    at executeTemplate (/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-62672OIL.js:19469:5)
-    at refreshView (/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-62672OIL.js:20520:7)
-ERROR ReferenceError: window is not defined
-    at CommonModule (/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/src/app/ninjacut.component.ts:127:5)
-    at callHookInternal (/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-62672OIL.js:14784:10)
-    at callHook (/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-62672OIL.js:14799:7)
-    at callHooks (/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-62672OIL.js:14773:9)
-    at executeInitAndCheckHooks (/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-62672OIL.js:14742:5)
-    at selectIndexInternal (/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-62672OIL.js:19416:9)
-    at Module.ɵɵadvance (/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-62672OIL.js:19402:3)
-    at CommonModule (/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/src/app/app.component.html:19:33)
-    at executeTemplate (/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-62672OIL.js:19469:5)
-    at refreshView (/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/.angular/cache/19.2.1/angular/vite/deps_ssr/chunk-62672OIL.js:20520:7)
+  ➜  Local:   http://localhost:3000/
+  ➜  Network: http://172.17.0.2:3000/
 ❯ Changes detected. Rebuilding...
 ✔ Changes detected. Rebuilding...
 Browser bundles    
 Initial chunk files | Names       |  Raw size
-main.js             | main        |  29.60 kB | 
+main.js             | main        |  33.69 kB | 
 
 
 Server bundles     
 Initial chunk files | Names       |  Raw size
-chunk-PXTAUCYH.mjs  | -           |  30.04 kB | 
+chunk-7QIT2SSG.mjs  | -           |  34.13 kB | 
 server.mjs          | server      |   1.39 kB | 
 main.server.mjs     | main.server | 800 bytes | 
 
-Application bundle generation complete. [0.378 seconds]
+Application bundle generation complete. [0.615 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       |  Raw size
+main.js             | main        |  33.70 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       |  Raw size
+chunk-OOL4CXJR.mjs  | -           |  34.14 kB | 
+server.mjs          | server      |   1.39 kB | 
+main.server.mjs     | main.server | 800 bytes | 
+
+Application bundle generation complete. [0.605 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       |  Raw size
+main.js             | main        |  33.71 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       |  Raw size
+chunk-JDMAX6K6.mjs  | -           |  34.15 kB | 
+server.mjs          | server      |   1.39 kB | 
+main.server.mjs     | main.server | 800 bytes | 
+
+Application bundle generation complete. [0.356 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       |  Raw size
+main.js             | main        |  33.72 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       |  Raw size
+chunk-WV3D4ZUJ.mjs  | -           |  34.16 kB | 
+server.mjs          | server      |   1.39 kB | 
+main.server.mjs     | main.server | 800 bytes | 
+
+Application bundle generation complete. [0.393 seconds]
+
+Page reload sent to client(s).
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles    
+Initial chunk files | Names       |  Raw size
+main.js             | main        |  33.72 kB | 
+
+
+Server bundles     
+Initial chunk files | Names       |  Raw size
+chunk-S3OWPC4C.mjs  | -           |  34.16 kB | 
+server.mjs          | server      |   1.39 kB | 
+main.server.mjs     | main.server | 800 bytes | 
+
+Application bundle generation complete. [0.318 seconds]
 
 Page reload sent to client(s).
