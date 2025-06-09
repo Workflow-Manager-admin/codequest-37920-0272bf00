@@ -1,14 +1,16 @@
 import { Component, signal } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 // PUBLIC_INTERFACE
 @Component({
   selector: 'app-ninjacut',
   standalone: true,
+  imports: [CommonModule],
   template: `
-    <div class="ninja-cut-hero-glassy">
+    <div class="ninja-cut-hero-glassy" (click)="onClick()" tabindex="0" role="button" aria-label="Replay Ninja Animation">
       <!-- Ninja Illustration (Realistic-styled SVG) -->
       <svg class="ninja-svg" viewBox="0 0 350 300" fill="none" xmlns="http://www.w3.org/2000/svg"
-            [class.animate-swing]="isSwinging" (animationend)="onSwingEnd()">
+            [class.animate-swing]="isSwinging()" (animationend)="onSwingEnd()">
         <!-- BODY (dark suit, glass-shadow) -->
         <ellipse cx="170" cy="215" rx="55" ry="68" fill="#25252C" filter="url(#shadow1)" opacity="0.98"/>
         <!-- FACE HOOD -->
@@ -31,7 +33,7 @@ import { Component, signal } from '@angular/core';
         <!-- Left ARM -->
         <rect x="75" y="160" width="21" height="68" rx="12" transform="rotate(-25 75 160)" fill="#232328" filter="url(#blurarm1)"/>
         <!-- Right ARM (SWORD, animated via group) -->
-        <g class="sword-arm-group" [ngClass]="{ 'swinging': isSwinging }">
+        <g class="sword-arm-group" [ngClass]="{ 'swinging': isSwinging() }">
           <!-- Right ARM -->
           <rect x="206" y="158" width="20" height="72" rx="13" transform="rotate(23 206 158)" fill="#232328" filter="url(#blurarm2)"/>
           <!-- HAND -->
@@ -39,7 +41,7 @@ import { Component, signal } from '@angular/core';
           <!-- SWORD -->
           <g class="sword-group">
             <!-- Sword trail animation (shows during swing) -->
-            <path *ngIf="isSwinging"
+            <path *ngIf="isSwinging()"
                 class="sword-trail"
                 d="M 234 225 Q 272 173, 292 95" stroke="#00f2fe" stroke-width="12" stroke-linecap="round"
                 filter="url(#trailglow)" opacity="0.33"/>
@@ -64,7 +66,7 @@ import { Component, signal } from '@angular/core';
         <!-- NINJA SCARF tail -->
         <path d="M110,90 Q106,68 130,79" stroke="#ed21fa" stroke-width="8" fill="none" opacity="0.74"/>
         <!-- Sword cut EFFECT (show on swing) -->
-        <g *ngIf="cutActive">
+        <g *ngIf="cutActive()">
           <rect x="126" y="55" width="110" height="27" rx="13.5"
                 fill="url(#glasscut)" filter="url(#cardblur)"/>
           <text x="135" y="75" font-size="18" font-family="Inter,sans-serif" fill="#ed21fa" font-weight="bold" opacity="0.93">CodeQuest!</text>
@@ -90,7 +92,7 @@ import { Component, signal } from '@angular/core';
       </svg>
       <!-- Animate cut button for demo (tap anywhere to replay) -->
       <div class="ninja-text-overlay glass-card">
-        <span class="cut-exclam">The Ninja strikes! <span class="swing-signal" *ngIf="isSwinging">⚡</span></span>
+        <span class="cut-exclam">The Ninja strikes! <span class="swing-signal" *ngIf="isSwinging()">⚡</span></span>
         <span class="cut-click-hint">(Click/tap to see the cut!)</span>
       </div>
     </div>
@@ -98,39 +100,38 @@ import { Component, signal } from '@angular/core';
   styleUrls: ['./ninjacut.component.css']
 })
 export class NinjacutComponent {
+  // Boolean signals for animation state
   isSwinging = signal(false);
   cutActive = signal(false);
-
-  constructor() {}
 
   // PUBLIC_INTERFACE
   startAnimation() {
     // Start sword swing and cut animation
-    if (this.isSwinging.value) return;
-    this.isSwinging.value = true;
+    if (this.isSwinging()) return;
+    this.isSwinging.set(true);
+    // eslint-disable-next-line no-undef
     setTimeout(() => {
-      this.cutActive.value = true; // Show cut halfway through swing
+      this.cutActive.set(true); // Show cut halfway through swing
     }, 400);
+    // eslint-disable-next-line no-undef
     setTimeout(() => {
-      this.cutActive.value = false;
+      this.cutActive.set(false);
     }, 1400);
   }
 
   // PUBLIC_INTERFACE
   onSwingEnd() {
-    this.isSwinging.value = false;
-    this.cutActive.value = false;
+    this.isSwinging.set(false);
+    this.cutActive.set(false);
   }
 
-  // On init, trigger swing after a short delay for entry, and tap to replay
   ngOnInit() {
+    // eslint-disable-next-line no-undef
     setTimeout(() => this.startAnimation(), 550);
   }
+
   // PUBLIC_INTERFACE
-  // Allow tap anywhere on component to replay swing/cut
-  // use host binding for accessibility
   onClick() {
     this.startAnimation();
   }
 }
-
