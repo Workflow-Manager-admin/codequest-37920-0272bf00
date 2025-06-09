@@ -8,160 +8,151 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `
     <div class="ninja-cut-hero-glassy" (click)="onClick()" tabindex="0" role="button" aria-label="Replay Ninja Animation">
-      <!-- Ninja Illustration (Highly realistic SVG) -->
-      <svg class="ninja-svg" viewBox="0 0 350 300" fill="none" xmlns="http://www.w3.org/2000/svg"
+      <!-- Modern Ninja Illustration: More realism and dynamic lifelike pose, glassmorphism harmonized -->
+      <svg class="ninja-svg" viewBox="0 0 370 320" fill="none" xmlns="http://www.w3.org/2000/svg"
             [class.animate-swing]="isSwinging()" (animationend)="onSwingEnd()">
-        <!-- Shadow below foot -->
-        <ellipse cx="170" cy="275" rx="62" ry="15" fill="#26364B" opacity="0.29" />
-        <!-- Ninja Body (more anatomical, muscled definition, body suit highlights, complex gradients) -->
+        <!-- Dynamic ground shadow -->
+        <ellipse cx="185" cy="298" rx="78" ry="16" fill="#101E3B" opacity="0.24"/>
+        <!-- Rear (support) leg, foreshortened with shoe -->
+        <g filter="url(#subtleShadow)">
+          <rect x="220" y="238" width="22" height="52" rx="10" fill="#1b2230" stroke="#12171f" stroke-width="2.5"/>
+          <ellipse cx="230.5" cy="288" rx="13.2" ry="7.6" fill="#11eefd" stroke="#15181b" stroke-width="1.4"/>
+        </g>
+        <!-- Fore leg, angled, dynamic -->
         <g>
-          <!-- Torso -->
+          <rect x="115" y="223" width="29" height="62" rx="10" fill="#242c32" stroke="#11151b" stroke-width="2.3"/>
+          <ellipse cx="129" cy="285" rx="14.7" ry="8.2" fill="#21fbfc" stroke="#13161b" stroke-width="1.3"/>
+        </g>
+        <!-- Torso and hips (dynamic twist) -->
+        <g>
           <path
-            d="M154,165 Q150,204 172,256 Q204,242 202,180 Q200,145 154,165 Z"
-            fill="url(#bodyGradient)"
-            stroke="#191f24" stroke-width="2.8"
-            filter="url(#bodyshadow)"
-            opacity="0.98"/>
-          <!-- Chest/abs highlight -->
-          <path
-            d="M162,182 Q172,223 182,182"
-            fill="none"
-            stroke="#316979"
-            stroke-width="8"
-            opacity="0.06"/>
+            d="M184 110 Q201 144 198 210 Q195 282 154 253 Q144 216 153 158 Q163 120 184 110 Z"
+            fill="url(#TorsoSkin)" stroke="#232b38" stroke-width="3.1" opacity="0.99"/>
+          <ellipse cx="178" cy="200" rx="39" ry="23" fill="#23273a" />
         </g>
-        <!-- Pelvis and wrap -->
-        <ellipse cx="174" cy="210" rx="35" ry="21" fill="#24272E" opacity="0.93" filter="url(#pelvisshadow)"/>
-        <rect x="144" y="203" rx="7" width="54" height="13" fill="#d63a45" opacity="0.77"/>
-        <!-- Hips contour -->
-        <path d="M139,211 Q153,234 174,227 Q194,231 206,212" fill="none" stroke="#2f384c" stroke-width="6" opacity="0.20"/>
-        <!-- Highly detailed HEAD: nose, brow, muscle lines, shadowed mask, cheekbone -->
+        <!-- Main belt and wrap -->
         <g>
-          <!-- Hood/cowl -->
-          <ellipse cx="174" cy="96" rx="63" ry="64" fill="url(#hoodColorDark)" stroke="#0ff2dc" stroke-width="2.2"/>
-          <!-- Hood folds/highlights -->
-          <path d="M108,87 Q142,53 190,58 Q225,64 230,104 Q215,110 175,117" fill="none" stroke="#3de2d6" stroke-width="5.3" opacity="0.12"/>
-          <ellipse cx="163" cy="66" rx="19" ry="7" fill="#242d3e" opacity="0.26" />
+          <rect x="142" y="210" rx="14" width="68" height="16" fill="#ff387a" opacity="0.84" filter="url(#pelvisshadow)"/>
+          <ellipse cx="177" cy="220" rx="37" ry="13" fill="#1f2232" opacity="0.95"/>
         </g>
-        <!-- Face (realistic, strong jaw, visible eyebrows, shaded) -->
-        <g>
-          <!-- Face skin (visible under mask) -->
-          <ellipse cx="174" cy="99" rx="38" ry="27" fill="#e8cdab" stroke="#b4874a" stroke-width="1.5" />
-          <!-- Mask band high-res -->
-          <rect x="111" y="86.5" rx="9.5" width="127" height="32" fill="#161943" stroke="#2ceed0" stroke-width="1.6" opacity="0.87"/>
-          <!-- Eyes left -->
-          <ellipse cx="160" cy="98" rx="11.5" ry="7.2" fill="#fff"/>
-          <ellipse cx="159.9" cy="99.7" rx="3.2" ry="3.8" fill="#24252a"/>
-          <ellipse cx="162" cy="96.8" rx="1.0" ry="1.5" fill="#ccd" />
-          <!-- Eyes right -->
-          <ellipse cx="188" cy="98" rx="11.5" ry="7.1" fill="#fff"/>
-          <ellipse cx="188.2" cy="99.7" rx="3.2" ry="3.8" fill="#24252a"/>
-          <ellipse cx="190" cy="96.8" rx="1.0" ry="1.5" fill="#ccd" />
-          <!-- Brows (intense, thick) -->
-          <path d="M152,91 Q158,90 164,95" stroke="#343936" stroke-width="3.1" />
-          <path d="M182,94 Q186,88 195,91" stroke="#343936" stroke-width="3.1" />
-          <!-- Nose bridge highlight -->
-          <path d="M174,100 Q178,103 174,108" stroke="#e8cdab" stroke-width="1.2"/>
-          <!-- Masked cheek shadow -->
-          <ellipse cx="154" cy="108" rx="6.5" ry="3.5" fill="#24212C" opacity="0.22"/>
-          <ellipse cx="194" cy="108" rx="6.5" ry="3.5" fill="#24212C" opacity="0.20"/>
+        <!-- Chest muscle highlight -->
+        <path d="M182,152 Q192,183 207,179 Q188,187 181,174" fill="none" stroke="#54dbe7" stroke-width="6.5" opacity="0.13"/>
+        <!-- Shoulders and arms -->
+        <g id="forearm-left">
+          <path d="M111,122 Q93,192 126,227 Q143,182 140,126 Z"
+              fill="#191d29" stroke="#0b0e14" stroke-width="2.9" />
+          <ellipse cx="117" cy="215" rx="14" ry="16.2" fill="#e3b687" stroke="#a37a41" stroke-width="1.5"/>
         </g>
-        <!-- Realistic scarf, winding around head with trailing -->
-        <path d="M110,68 Q98,48 143,55 Q121,60 107,63 Q115,82 128,84" stroke="#ed21fa" stroke-width="10" fill="none" opacity="0.82"/>
-        <path d="M238,98 Q296,82 310,69 Q307,82 242,115" stroke="#ed21fa" stroke-width="7" fill="none" opacity="0.44"/>
-        <!-- Left arm (realistic muscles) -->
-        <g>
-          <path d="M114,133 Q96,186 122,216 Q138,177 137,133" fill="#181c23" stroke="#0d131a" stroke-width="2.5"/>
-          <ellipse cx="120" cy="200" rx="13.5" ry="15.5" fill="#e5c6ac" stroke="#b4874a" stroke-width="1.2"/>
-        </g>
-        <!-- Right arm with SWORD (animated group, realistic form) -->
+        <!-- Sword arm: Animated! (slashing forward, perspective) -->
         <g class="sword-arm-group" [ngClass]="{ 'swinging': isSwinging() }">
-          <!-- Right upper arm & forearm -->
-          <path d="M212,120 Q225,175 237,196 Q255,189 247,146 Q236,122 212,120 Z"
-                fill="#181c21" stroke="#3f4245" stroke-width="2.4" filter="url(#blurarm2)"/>
-          <!-- Hand (gripping sword, knuckles detailed, wrist) -->
-          <ellipse cx="243" cy="201" rx="13" ry="10.5" fill="#e4c29f" stroke="#b4874a" stroke-width="1.2"/>
-          <!-- SWORD: Handle and blade -->
+          <path
+            d="M229,122 Q248,164 262,210 Q293,211 266,157 Q238,120 229,122 Z"
+            fill="#1a202b" stroke="#232b38" stroke-width="3.2" filter="url(#blurarm2)"/>
+          <!-- Forearm and palm -->
+          <ellipse cx="267" cy="210" rx="15.5" ry="12" fill="#efd2a8" stroke="#ba9155" stroke-width="1.6"/>
+          <!-- Fingers gripping -->
+          <ellipse cx="268" cy="220" rx="7.2" ry="2.2" fill="#fbe2c9" opacity="0.87" />
+          <ellipse cx="273" cy="215" rx="2.4" ry="4.2" fill="#b4874a" opacity="0.28"/>
+          <!-- Sword -->
           <g class="sword-group">
-            <!-- Sword trail animation (shows during swing) -->
-            <path *ngIf="isSwinging()"
-                  class="sword-trail"
-                  d="M 256 225 Q 292 172 320 77"
-                  stroke="#00f2fe" stroke-width="16" stroke-linecap="round"
-                  filter="url(#trailglow)" opacity="0.33"/>
-            <!-- Sword blade, metallic gradients and shine -->
-            <rect x="251" y="174" width="14" height="70" rx="2.8"
-              fill="url(#blade)" stroke="url(#bladestroke)" stroke-width="2.2"
-              transform="rotate(-18 251 174)" filter="url(#swordshine)"/>
-            <!-- Blade edge -->
-            <rect x="258.5" y="175.5" width="3.8" height="66" rx="1.3"
-              fill="#fff" opacity="0.24"
-              transform="rotate(-18 258.5 175.5)"/>
-            <!-- Sword handle (fabric-wrapped + pommel) -->
-            <rect x="257" y="238" width="6.8" height="27" rx="3"
-              fill="url(#handlewrap)" stroke="#24252a" stroke-width="1"/>
-            <ellipse cx="260.2" cy="263.2" rx="7.2" ry="2.8"
-              fill="#e5c983" stroke="#fff" stroke-width="1"/>
+            <path *ngIf="isSwinging()" class="sword-trail"
+              d="M 284 232 Q 322 155 346 29"
+              stroke="#00fcff" stroke-width="19" stroke-linecap="round"
+              filter="url(#trailglow)" opacity="0.44"/>
+            <rect x="274" y="187" width="19" height="83" rx="3.2"
+              fill="url(#blade)" stroke="url(#bladestroke)" stroke-width="2.6"
+              transform="rotate(-13 283 187)" filter="url(#swordshine)"/>
+            <rect x="285.6" y="194" width="4.3" height="66" rx="1.5"
+              fill="#fff" opacity="0.17"
+              transform="rotate(-13 285.5 194)"/>
+            <rect x="281" y="258" width="8" height="27" rx="3.6"
+              fill="url(#handlewrap)" stroke="#23232a" stroke-width="1.2"/>
+            <ellipse cx="285.7" cy="283" rx="8.1" ry="3.5"
+              fill="#ffd984" stroke="#fff" stroke-width="1.2"/>
           </g>
         </g>
-        <!-- Right leg -->
-        <rect x="191" y="233" width="16" height="43" rx="8" fill="#222931" stroke="#191f24" stroke-width="2"/>
-        <!-- Left leg -->
-        <rect x="143" y="238" width="15.5" height="41" rx="7.2" fill="#222931" stroke="#191f24" stroke-width="2"/>
-        <!-- Right shoe -->
-        <ellipse cx="199.2" cy="274" rx="12.2" ry="7.2" fill="#18d8de" stroke="#10151b" stroke-width="1.1"/>
-        <!-- Left shoe -->
-        <ellipse cx="150.8" cy="276" rx="12.2" ry="7.2" fill="#18d8de" stroke="#10151b" stroke-width="1.1"/>
+        <!-- Hooded head: highly realistic anatomy and glassy rim light -->
+        <g>
+          <!-- Rear cowl shadow -->
+          <ellipse cx="178" cy="64" rx="69" ry="63" fill="url(#hoodDarkGrad)" stroke="#11ffe9" stroke-width="2.2"/>
+          <!-- Hood detail/hightlighted fold -->
+          <path d="M111,51 Q150,28 208,43 Q266,64 241,105 Q208,90 120,90" fill="none" stroke="#67fff8" stroke-width="6" opacity="0.13"/>
+          <ellipse cx="170" cy="46" rx="29" ry="9" fill="#353a66" opacity="0.15"/>
+        </g>
+        <!-- Face and mask, strong features and shadows -->
+        <g>
+          <ellipse cx="179" cy="88" rx="41" ry="30" fill="#e9ceab" stroke="#b4884a" stroke-width="1.8"/>
+          <rect x="136" y="74" rx="10.75" width="90" height="34.5" fill="#191753"
+             stroke="#18fff2" stroke-width="1.7" opacity="0.93"/>
+          <!-- Left eye (alert, sharp) -->
+          <ellipse cx="166.2" cy="92" rx="10" ry="6.6" fill="#fff"/>
+          <ellipse cx="167.3" cy="93.3" rx="2.8" ry="3.2" fill="#27272a"/>
+          <ellipse cx="168.8" cy="91.1" rx="1.2" ry="1.5" fill="#ccd" />
+          <!-- Right eye (alert, sharp) -->
+          <ellipse cx="193.4" cy="93" rx="10.1" ry="6.7" fill="#fff"/>
+          <ellipse cx="192.1" cy="93.5" rx="2.2" ry="3.5" fill="#23242e"/>
+          <ellipse cx="194.2" cy="90.2" rx="1.2" ry="1.6" fill="#ccd" />
+          <!-- Eyebrows (focused, thick and slanted for aggression) -->
+          <path d="M160,80 Q166,77 170,84" stroke="#181819" stroke-width="3.5" />
+          <path d="M189,84 Q193,80 200,83" stroke="#232323" stroke-width="3.2" />
+          <!-- Jaw, shadows, cheekbones -->
+          <ellipse cx="155" cy="105" rx="8" ry="4.5" fill="#232128" opacity="0.15"/>
+          <ellipse cx="204" cy="105" rx="7" ry="4.8" fill="#23212C" opacity="0.12"/>
+          <path d="M180,98 Q180,105 177,110" stroke="#efdcb8" stroke-width="1.3"/>
+        </g>
+        <!-- Dynamic scarf trailing to side, with neon tint -->
+        <path d="M99,69 Q75,60 161,62 Q123,63 85,74 Q104,90 131,88"
+          stroke="#d42fff" stroke-width="13" fill="none" opacity="0.81"/>
+        <path d="M246,75 Q328,60 340,47 Q344,66 256,107" stroke="#bb20fa" stroke-width="8" fill="none" opacity="0.47"/>
         <!-- On sword cut, animate neon glassy slash with text -->
         <g *ngIf="cutActive()">
-          <rect x="129" y="71" width="117" height="32" rx="15"
+          <rect x="149" y="51" width="117" height="32" rx="16"
               fill="url(#glasscut)" filter="url(#cardblur)"/>
-          <text x="145" y="93" font-size="22" font-family="Oxanium,Inter,sans-serif"
+          <text x="162" y="74" font-size="22" font-family="Oxanium,Inter,sans-serif"
             fill="#25fcff" font-weight="bolder" opacity="0.99" style="filter: drop-shadow(0 0 11px #19f9ffbb) drop-shadow(0 2px 8px #b25dffcc); letter-spacing:0.06em;">CodeQuest!</text>
-          <path d="M239,115 L168,87" stroke="#25fcff" stroke-width="4.6" filter="url(#cutglow)"/>
+          <path d="M267,104 L172,63" stroke="#23e4fd" stroke-width="4.6" filter="url(#cutglow)"/>
         </g>
         <defs>
-          <filter id="bodyshadow" x="-20%" y="-25%" width="140%" height="140%">
-            <feDropShadow dx="0" dy="12" stdDeviation="13" flood-color="#00f2fe" flood-opacity="0.09" />
-          </filter>
-          <filter id="pelvisshadow"><feGaussianBlur stdDeviation="2.4"/></filter>
-          <filter id="blurarm2"><feGaussianBlur stdDeviation="2.1" /></filter>
-          <filter id="trailglow"><feGaussianBlur stdDeviation="9" /></filter>
-          <filter id="swordshine"><feGaussianBlur stdDeviation="1.7"/><feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#00f2fe" flood-opacity="0.24" /></filter>
-          <filter id="cutglow"><feGaussianBlur stdDeviation="3.6" /></filter>
-          <filter id="cardblur"><feGaussianBlur stdDeviation="11" /></filter>
-          <radialGradient id="hoodColorDark" cx="60%" cy="48%" r="83%">
+          <filter id="pelvisshadow"><feGaussianBlur stdDeviation="2.7"/></filter>
+          <filter id="blurarm2"><feGaussianBlur stdDeviation="2.8" /></filter>
+          <filter id="subtleShadow"><feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#00f2fe" flood-opacity="0.16" /></filter>
+          <filter id="trailglow"><feGaussianBlur stdDeviation="9.8" /></filter>
+          <filter id="swordshine"><feGaussianBlur stdDeviation="2.5"/><feDropShadow dx="0" dy="0" stdDeviation="2" flood-color="#00f2fe" flood-opacity="0.39" /></filter>
+          <filter id="cutglow"><feGaussianBlur stdDeviation="4.5" /></filter>
+          <filter id="cardblur"><feGaussianBlur stdDeviation="13" /></filter>
+          <radialGradient id="hoodDarkGrad" cx="60%" cy="47%" r="81%">
             <stop offset="0%" stop-color="#181c23" />
-            <stop offset="66%" stop-color="#131821" />
-            <stop offset="100%" stop-color="#222630" />
+            <stop offset="55%" stop-color="#1d2430" />
+            <stop offset="100%" stop-color="#0e061a" />
           </radialGradient>
-          <linearGradient id="bodyGradient" x1="130" y1="150" x2="205" y2="260" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#23272E" />
-            <stop offset="1" stop-color="#22252B" />
+          <linearGradient id="TorsoSkin" x1="140" y1="85" x2="220" y2="260" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#1b263d"/>
+            <stop offset="0.34" stop-color="#0f162e"/>
+            <stop offset="1" stop-color="#23282F"/>
           </linearGradient>
-          <linearGradient id="blade" x1="251" y1="174" x2="265" y2="245">
-            <stop stop-color="#e6eef1"/>
-            <stop offset="0.44" stop-color="#bfc8cb"/>
-            <stop offset="0.7" stop-color="#d1eeff"/>
-            <stop offset="1" stop-color="#aabac6"/>
+          <linearGradient id="blade" x1="274" y1="187" x2="295" y2="270">
+            <stop stop-color="#f6fafe"/>
+            <stop offset="0.44" stop-color="#b4e8fc"/>
+            <stop offset="0.8" stop-color="#b7e7fb"/>
+            <stop offset="1" stop-color="#91b8ca"/>
           </linearGradient>
-          <linearGradient id="bladestroke" x1="251" y1="174" x2="265" y2="245">
-            <stop stop-color="#8dc4e6"/>
-            <stop offset="1" stop-color="#1caedd"/>
+          <linearGradient id="bladestroke" x1="274" y1="187" x2="298" y2="270">
+            <stop stop-color="#85c7f2"/>
+            <stop offset="1" stop-color="#18fffd"/>
           </linearGradient>
-          <linearGradient id="handlewrap" x1="257" y1="238" x2="257" y2="265">
-            <stop stop-color="#514324"/>
-            <stop offset="0.5" stop-color="#cfb684"/>
-            <stop offset="1" stop-color="#6a5740"/>
+          <linearGradient id="handlewrap" x1="281" y1="258" x2="281" y2="285">
+            <stop stop-color="#6f5641"/>
+            <stop offset="0.5" stop-color="#dfd6b4"/>
+            <stop offset="1" stop-color="#4e3720"/>
           </linearGradient>
-          <linearGradient id="glasscut" x1="129" y1="97" x2="246" y2="75" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#25fcff" stop-opacity="0.34"/>
-            <stop offset="0.42" stop-color="#b25dff" stop-opacity="0.16"/>
-            <stop offset="1" stop-color="#fff" stop-opacity="0.38"/>
+          <linearGradient id="glasscut" x1="149" y1="67" x2="266" y2="89" gradientUnits="userSpaceOnUse">
+            <stop stop-color="#25fcff" stop-opacity="0.39"/>
+            <stop offset="0.54" stop-color="#b25dff" stop-opacity="0.21"/>
+            <stop offset="1" stop-color="#fff" stop-opacity="0.31"/>
           </linearGradient>
         </defs>
       </svg>
-      <!-- Animate cut button for demo (tap anywhere to replay) -->
+      <!-- Interactive hint overlay -->
       <div class="ninja-text-overlay glass-card">
         <span class="cut-exclam">The Ninja strikes! <span class="swing-signal" *ngIf="isSwinging()">⚡</span></span>
         <span class="cut-click-hint">(Click/tap to see the cut!)</span>
