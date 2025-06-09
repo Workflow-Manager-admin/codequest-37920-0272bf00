@@ -9,20 +9,20 @@ The "disableHostCheck" option will not be used because it is not supported by th
 Browser bundles     
 Initial chunk files  | Names            |  Raw size
 polyfills.js         | polyfills        |  90.20 kB | 
-main.js              | main             |  44.68 kB | 
-styles.css           | styles           |   1.64 kB | 
+main.js              | main             |  47.53 kB | 
+styles.css           | styles           |   1.68 kB | 
 
-                     | Initial total    | 136.51 kB
+                     | Initial total    | 139.41 kB
 
 
 Server bundles      
 Initial chunk files  | Names            |  Raw size
 polyfills.server.mjs | polyfills.server | 572.91 kB | 
-chunk-7KGVOGCQ.mjs   | -                |  45.12 kB | 
+chunk-JJ3OQV2A.mjs   | -                |  47.97 kB | 
 server.mjs           | server           |   1.39 kB | 
 main.server.mjs      | main.server      | 800 bytes | 
 
-Application bundle generation complete. [3.297 seconds]
+Application bundle generation complete. [3.136 seconds]
 
 Watch mode enabled. Watching for file changes...
 NOTE: Raw file sizes do not reflect development server per-request transformations.
@@ -30,57 +30,109 @@ NOTE: Raw file sizes do not reflect development server per-request transformatio
   ➜  Network: http://172.17.0.2:3000/
 ❯ Changes detected. Rebuilding...
 ✔ Changes detected. Rebuilding...
-Initial chunk files | Names  | Raw size
-styles.css          | styles |  1.68 kB | 
+Browser bundles    
+Initial chunk files | Names       |  Raw size
+main.js             | main        |  50.89 kB | 
 
-Application bundle generation complete. [0.041 seconds]
+
+Server bundles     
+Initial chunk files | Names       |  Raw size
+chunk-3TD4GR5Y.mjs  | -           |  51.33 kB | 
+server.mjs          | server      |   1.39 kB | 
+main.server.mjs     | main.server | 800 bytes | 
+
+Application bundle generation complete. [0.822 seconds]
 
 Page reload sent to client(s).
 ❯ Changes detected. Rebuilding...
 ✔ Changes detected. Rebuilding...
 Browser bundles    
 Initial chunk files | Names       |  Raw size
-main.js             | main        |  47.04 kB | 
+main.js             | main        |  50.92 kB | 
 
 
 Server bundles     
 Initial chunk files | Names       |  Raw size
-chunk-FXQRSPZN.mjs  | -           |  47.48 kB | 
+chunk-MDY57N67.mjs  | -           |  51.36 kB | 
 server.mjs          | server      |   1.39 kB | 
 main.server.mjs     | main.server | 800 bytes | 
 
-Application bundle generation complete. [0.675 seconds]
+Application bundle generation complete. [0.523 seconds]
 
 Page reload sent to client(s).
 ❯ Changes detected. Rebuilding...
 ✔ Changes detected. Rebuilding...
 Browser bundles    
 Initial chunk files | Names       |  Raw size
-main.js             | main        |  47.16 kB | 
+main.js             | main        |  50.95 kB | 
 
 
 Server bundles     
 Initial chunk files | Names       |  Raw size
-chunk-GVBBCTQ6.mjs  | -           |  47.60 kB | 
+chunk-GI2FJIQY.mjs  | -           |  51.38 kB | 
 server.mjs          | server      |   1.39 kB | 
 main.server.mjs     | main.server | 800 bytes | 
 
-Application bundle generation complete. [0.542 seconds]
+Application bundle generation complete. [0.540 seconds]
 
 Page reload sent to client(s).
 ❯ Changes detected. Rebuilding...
 ✔ Changes detected. Rebuilding...
-Browser bundles    
-Initial chunk files | Names       |  Raw size
-main.js             | main        |  47.28 kB | 
+Application bundle generation failed. [0.628 seconds]
+
+✘ [ERROR] TS2339: Property 'ngZone' does not exist on type 'AppComponent'. [plugin angular-compiler]
+
+    src/app/app.component.ts:57:14:
+      57 │     void this.ngZone;
+         ╵               ~~~~~~
 
 
-Server bundles     
-Initial chunk files | Names       |  Raw size
-chunk-F4MD5JGP.mjs  | -           |  47.72 kB | 
-server.mjs          | server      |   1.39 kB | 
-main.server.mjs     | main.server | 800 bytes | 
+✘ [ERROR] TS2339: Property 'ngZone' does not exist on type 'AppComponent'. [plugin angular-compiler]
 
-Application bundle generation complete. [0.439 seconds]
+    src/app/app.component.ts:58:9:
+      58 │     this.ngZone.runOutsideAngular(() => {
+         ╵          ~~~~~~
 
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.426 seconds]
+
+✘ [ERROR] TS2339: Property 'ngZone' does not exist on type 'AppComponent'. [plugin angular-compiler]
+
+    src/app/app.component.ts:57:14:
+      57 │     void this.ngZone;
+         ╵               ~~~~~~
+
+
+✘ [ERROR] TS2339: Property 'ngZone' does not exist on type 'AppComponent'. [plugin angular-compiler]
+
+    src/app/app.component.ts:58:9:
+      58 │     this.ngZone.runOutsideAngular(() => {
+         ╵          ~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles     
+Initial chunk files  | Names            |  Raw size
+polyfills.js         | polyfills        |  90.20 kB | 
+main.js              | main             |  50.76 kB | 
+styles.css           | styles           |   1.68 kB | 
+
+                     | Initial total    | 142.64 kB
+
+
+Server bundles      
+Initial chunk files  | Names            |  Raw size
+polyfills.server.mjs | polyfills.server | 572.91 kB | 
+chunk-TG7F4XQW.mjs   | -                |  51.20 kB | 
+server.mjs           | server           |   1.39 kB | 
+main.server.mjs      | main.server      | 800 bytes | 
+
+Application bundle generation complete. [0.543 seconds]
+
+4:59:33 PM [vite] Internal server error: ɵgetOrCreateAngularServerApp is not a function
+      at /home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/node_modules/@angular/build/src/tools/vite/middlewares/ssr-middleware.js:30:38
+      at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
 Page reload sent to client(s).

@@ -25,16 +25,110 @@ export class AppComponent implements AfterViewInit {
   darkMode = true;        // Default to dark mode
   currentYear = new Date().getFullYear();
 
+  // Animate the ninja patrol
+  private patrolTimer: any = null;
+  private ninjaEl: HTMLElement | null = null;
+
+  // No dependencies required in constructor (ngZone removed to resolve linter error)
+  constructor() {}
+
   // PUBLIC_INTERFACE
   toggleDarkMode() {
     /** Toggles between dark and light mode (glassy UI). */
     this.darkMode = !this.darkMode;
   }
 
-  // After view init: draw night sky and handle parallax for shadow ninja 
+  // After view init: draw night sky and handle parallax for shadow ninja and animate ninja patrol
   ngAfterViewInit(): void {
     this.initAnimatedNightSky();
     this.initNinjaParallax();
+    this.initNinjaPatrol();
+  }
+
+  /**
+   * Ninja patrol: Animates the ninja SVG to randomly move across the dashboard background,
+   * with smooth, variable speed transitions and random pauses.
+   */
+  private initNinjaPatrol() {
+    // SSR safety
+    if (typeof globalThis === 'undefined' || !globalThis.document) return;
+    // Wait for ninja patrol element
+    const tryAttach = () => {
+      this.ninjaEl = globalThis.document.getElementById('ninja-patrol') as HTMLElement | null;
+      if (!this.ninjaEl) {
+        globalThis.setTimeout(tryAttach, 100);
+        return;
+      }
+      // Set initial style
+      this.ninjaEl.style.transition = 'transform 0.85s cubic-bezier(.62,.23,.48,.99)';
+      this.ninjaEl.style.pointerEvents = 'auto';
+      this.moveNinjaRandomly();
+    };
+    tryAttach();
+    // Responsive: Re-run on resize to keep ninja within bounds
+    if (typeof globalThis.addEventListener === 'function') {
+      globalThis.addEventListener('resize', () => {
+        if (this.ninjaEl) {
+          // Clamp ninja to window
+          this.clampNinjaToBounds();
+        }
+      });
+    }
+  }
+
+  /**
+   * Move ninja to a random location inside the window, with smooth and variable timing.
+   */
+  private moveNinjaRandomly() {
+    if (!this.ninjaEl) return;
+    // Get window and ninja size (ninjaEl is display:block, SVG width/height is about 361x320, but use actual size)
+    const pad = 28;
+    const vw = globalThis.innerWidth || 1200;
+    const vh = globalThis.innerHeight || 800;
+    const ninjaRect = this.ninjaEl.getBoundingClientRect();
+    const ninjaW = ninjaRect.width || 361;
+    const ninjaH = ninjaRect.height || 320;
+    // Target positions (don't allow ninja to go off screen or overlap cards too much)
+    // Safe range: [pad, w - ninjaW - pad], [pad, h - ninjaH - pad]
+    const minX = pad;
+    const maxX = Math.max(pad, vw - ninjaW - pad);
+    const minY = pad + 16;
+    const maxY = Math.max(pad + 16, vh - ninjaH - pad - 28);
+    // Random target
+    const tx = Math.floor(Math.random() * (maxX - minX)) + minX;
+    const ty = Math.floor(Math.random() * (maxY - minY)) + minY;
+    // Variable movement duration: ninja moves faster for short hops, slower for long dashes
+    const dx = tx - (this.ninjaEl.offsetLeft || 0);
+    const dy = ty - (this.ninjaEl.offsetTop || 0);
+    const dist = Math.sqrt(dx*dx + dy*dy);
+    // Min duration 0.7s, max 2.2s based on max possible distance (diagonal of viewport)
+    const viewportDiag = Math.sqrt(vw*vw + vh*vh);
+    const baseDuration = 0.7 + (1.9 * (dist / (viewportDiag || 1450)));
+    // Make it slightly random for lively feel
+    const duration = baseDuration * (0.85 + Math.random() * 0.55);
+    this.ninjaEl.style.transition = `transform ${duration.toFixed(2)}s cubic-bezier(.58,.12,.37,1.07)`;
+    this.ninjaEl.style.transform = `translate(${tx}px, ${ty}px) scaleX(${tx > vw/2 ? -1 : 1})`;
+    // Schedule next move with random pause (ninja "waits" or "patrols" at each stop)
+    if (this.patrolTimer) globalThis.clearTimeout(this.patrolTimer);
+    const pause = 600 + Math.random()*1200; // 0.6-2s stationary between moves
+    this.patrolTimer = globalThis.setTimeout(() => this.moveNinjaRandomly(), duration*1000 + pause);
+  }
+
+  private clampNinjaToBounds() {
+    if (!this.ninjaEl) return;
+    const pad = 28;
+    const vw = globalThis.innerWidth || 1200;
+    const vh = globalThis.innerHeight || 800;
+    const ninjaRect = this.ninjaEl.getBoundingClientRect();
+    const ninjaW = ninjaRect.width || 361;
+    const ninjaH = ninjaRect.height || 320;
+    let tx = this.ninjaEl.offsetLeft;
+    let ty = this.ninjaEl.offsetTop;
+    if (tx + ninjaW > vw - pad) tx = vw - ninjaW - pad;
+    if (ty + ninjaH > vh - pad) ty = vh - ninjaH - pad;
+    tx = Math.max(tx, pad);
+    ty = Math.max(ty, pad);
+    this.ninjaEl.style.transform = `translate(${tx}px, ${ty}px)`;
   }
 
   /**
