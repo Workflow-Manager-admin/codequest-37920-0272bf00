@@ -1,10 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { Ninja3dComponent } from './ninja3d.component';
 
 // PUBLIC_INTERFACE
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [CommonModule, RouterOutlet, Ninja3dComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   standalone: true,

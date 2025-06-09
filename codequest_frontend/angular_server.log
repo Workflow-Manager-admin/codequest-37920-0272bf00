@@ -9,63 +9,6 @@ The "disableHostCheck" option will not be used because it is not supported by th
 Browser bundles     
 Initial chunk files  | Names            |  Raw size
 polyfills.js         | polyfills        |  90.20 kB | 
-main.js              | main             |  22.59 kB | 
-styles.css           | styles           |  95 bytes | 
-
-                     | Initial total    | 112.88 kB
-
-
-Server bundles      
-Initial chunk files  | Names            |  Raw size
-polyfills.server.mjs | polyfills.server | 572.91 kB | 
-chunk-6XEG6CM6.mjs   | -                |  23.02 kB | 
-server.mjs           | server           |   1.39 kB | 
-main.server.mjs      | main.server      | 800 bytes | 
-
-Application bundle generation complete. [3.287 seconds]
-
-Watch mode enabled. Watching for file changes...
-NOTE: Raw file sizes do not reflect development server per-request transformations.
-  ➜  Local:   http://localhost:3000/
-  ➜  Network: http://172.17.0.2:3000/
-❯ Changes detected. Rebuilding...
-✔ Changes detected. Rebuilding...
-Browser bundles    
-Initial chunk files | Names       |  Raw size
-main.js             | main        |  30.02 kB | 
-
-
-Server bundles     
-Initial chunk files | Names       |  Raw size
-chunk-4CG7UGYV.mjs  | -           |  30.46 kB | 
-server.mjs          | server      |   1.39 kB | 
-main.server.mjs     | main.server | 800 bytes | 
-
-Application bundle generation complete. [1.182 seconds]
-
-Page reload sent to client(s).
-❯ Changes detected. Rebuilding...
-✔ Changes detected. Rebuilding...
-Application bundle generation failed. [0.449 seconds]
-
-✘ [ERROR] NG9: Property 'title' does not exist on type 'AppComponent'. [plugin angular-compiler]
-
-    src/app/app.component.html:228:20:
-      228 │       <h1>Hello, {{ title }}</h1>
-          ╵                     ~~~~~
-
-  Error occurs in the template of component AppComponent.
-
-    src/app/app.component.ts:8:15:
-      8 │   templateUrl: './app.component.html',
-        ╵                ~~~~~~~~~~~~~~~~~~~~~~
-
-
-❯ Changes detected. Rebuilding...
-✔ Changes detected. Rebuilding...
-Browser bundles     
-Initial chunk files  | Names            |  Raw size
-polyfills.js         | polyfills        |  90.20 kB | 
 main.js              | main             |  15.20 kB | 
 styles.css           | styles           |  95 bytes | 
 
@@ -79,7 +22,7 @@ chunk-BPVXBO4V.mjs   | -                |  15.64 kB |
 server.mjs           | server           |   1.39 kB | 
 main.server.mjs      | main.server      | 800 bytes | 
 
-Application bundle generation complete. [0.256 seconds]
+Application bundle generation complete. [4.409 seconds]
 
 ▲ [WARNING] NG8103: The `*ngIf` directive was used in the template, but neither the `NgIf` directive nor the `CommonModule` was imported. Use Angular's built-in control flow @if or make sure that either the `NgIf` directive or the `CommonModule` is included in the `@Component.imports` array of this component. [plugin angular-compiler]
 
@@ -107,4 +50,322 @@ Application bundle generation complete. [0.256 seconds]
         ╵                ~~~~~~~~~~~~~~~~~~~~~~
 
 
-Page reload sent to client(s).
+Watch mode enabled. Watching for file changes...
+NOTE: Raw file sizes do not reflect development server per-request transformations.
+4:16:20 PM [vite] (ssr) Re-optimizing dependencies because lockfile has changed
+4:16:20 PM [vite] (client) Re-optimizing dependencies because lockfile has changed
+  ➜  Local:   http://localhost:3000/
+  ➜  Network: http://172.17.0.2:3000/
+NG0303: Can't bind to 'ngIf' since it isn't a known property of 'span' (used in the '_AppComponent' component template).
+If the 'ngIf' is an Angular control flow directive, please make sure that either the 'NgIf' directive or the 'CommonModule' is included in the '@Component.imports' of this component.
+NG0303: Can't bind to 'ngIf' since it isn't a known property of 'span' (used in the '_AppComponent' component template).
+If the 'ngIf' is an Angular control flow directive, please make sure that either the 'NgIf' directive or the 'CommonModule' is included in the '@Component.imports' of this component.
+NG0303: Can't bind to 'ngIf' since it isn't a known property of 'span' (used in the '_AppComponent' component template).
+If the 'ngIf' is an Angular control flow directive, please make sure that either the 'NgIf' directive or the 'CommonModule' is included in the '@Component.imports' of this component.
+NG0303: Can't bind to 'ngIf' since it isn't a known property of 'span' (used in the '_AppComponent' component template).
+If the 'ngIf' is an Angular control flow directive, please make sure that either the 'NgIf' directive or the 'CommonModule' is included in the '@Component.imports' of this component.
+NG0303: Can't bind to 'ngIf' since it isn't a known property of 'span' (used in the '_AppComponent' component template).
+If the 'ngIf' is an Angular control flow directive, please make sure that either the 'NgIf' directive or the 'CommonModule' is included in the '@Component.imports' of this component.
+NG0303: Can't bind to 'ngIf' since it isn't a known property of 'span' (used in the '_AppComponent' component template).
+If the 'ngIf' is an Angular control flow directive, please make sure that either the 'NgIf' directive or the 'CommonModule' is included in the '@Component.imports' of this component.
+NG0303: Can't bind to 'ngIf' since it isn't a known property of 'span' (used in the '_AppComponent' component template).
+If the 'ngIf' is an Angular control flow directive, please make sure that either the 'NgIf' directive or the 'CommonModule' is included in the '@Component.imports' of this component.
+NG0303: Can't bind to 'ngIf' since it isn't a known property of 'span' (used in the '_AppComponent' component template).
+If the 'ngIf' is an Angular control flow directive, please make sure that either the 'NgIf' directive or the 'CommonModule' is included in the '@Component.imports' of this component.
+NG0303: Can't bind to 'ngIf' since it isn't a known property of 'span' (used in the '_AppComponent' component template).
+If the 'ngIf' is an Angular control flow directive, please make sure that either the 'NgIf' directive or the 'CommonModule' is included in the '@Component.imports' of this component.
+NG0303: Can't bind to 'ngIf' since it isn't a known property of 'span' (used in the '_AppComponent' component template).
+If the 'ngIf' is an Angular control flow directive, please make sure that either the 'NgIf' directive or the 'CommonModule' is included in the '@Component.imports' of this component.
+NG0303: Can't bind to 'ngIf' since it isn't a known property of 'span' (used in the '_AppComponent' component template).
+If the 'ngIf' is an Angular control flow directive, please make sure that either the 'NgIf' directive or the 'CommonModule' is included in the '@Component.imports' of this component.
+NG0303: Can't bind to 'ngIf' since it isn't a known property of 'span' (used in the '_AppComponent' component template).
+If the 'ngIf' is an Angular control flow directive, please make sure that either the 'NgIf' directive or the 'CommonModule' is included in the '@Component.imports' of this component.
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [1.161 seconds]
+
+▲ [WARNING] NG8103: The `*ngIf` directive was used in the template, but neither the `NgIf` directive nor the `CommonModule` was imported. Use Angular's built-in control flow @if or make sure that either the `NgIf` directive or the `CommonModule` is included in the `@Component.imports` array of this component. [plugin angular-compiler]
+
+    src/app/app.component.html:43:43:
+      43 │       <span class="sticky-animate streak" *ngIf="streakActive">
+         ╵                                            ~~~~
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.component.ts:8:15:
+      8 │   templateUrl: './app.component.html',
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~
+
+
+▲ [WARNING] NG8103: The `*ngIf` directive was used in the template, but neither the `NgIf` directive nor the `CommonModule` was imported. Use Angular's built-in control flow @if or make sure that either the `NgIf` directive or the `CommonModule` is included in the `@Component.imports` array of this component. [plugin angular-compiler]
+
+    src/app/app.component.html:46:45:
+      46 │       <span class="sticky-animate confetti" *ngIf="showConfetti">
+         ╵                                              ~~~~
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.component.ts:8:15:
+      8 │   templateUrl: './app.component.html',
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] NG8001: 'app-ninja3d' is not a known element:
+1. If 'app-ninja3d' is an Angular component, then verify that it is included in the '@Component.imports' of this component.
+2. If 'app-ninja3d' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@Component.schemas' of this component to suppress this message. [plugin angular-compiler]
+
+    src/app/app.component.html:13:6:
+      13 │       <app-ninja3d></app-ninja3d>
+         ╵       ~~~~~~~~~~~~~
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.component.ts:8:15:
+      8 │   templateUrl: './app.component.html',
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.621 seconds]
+
+▲ [WARNING] NG8103: The `*ngIf` directive was used in the template, but neither the `NgIf` directive nor the `CommonModule` was imported. Use Angular's built-in control flow @if or make sure that either the `NgIf` directive or the `CommonModule` is included in the `@Component.imports` array of this component. [plugin angular-compiler]
+
+    src/app/app.component.html:43:43:
+      43 │       <span class="sticky-animate streak" *ngIf="streakActive">
+         ╵                                            ~~~~
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.component.ts:9:15:
+      9 │   templateUrl: './app.component.html',
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~
+
+
+▲ [WARNING] NG8103: The `*ngIf` directive was used in the template, but neither the `NgIf` directive nor the `CommonModule` was imported. Use Angular's built-in control flow @if or make sure that either the `NgIf` directive or the `CommonModule` is included in the `@Component.imports` array of this component. [plugin angular-compiler]
+
+    src/app/app.component.html:46:45:
+      46 │       <span class="sticky-animate confetti" *ngIf="showConfetti">
+         ╵                                              ~~~~
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.component.ts:9:15:
+      9 │   templateUrl: './app.component.html',
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS7016: Could not find a declaration file for module 'three'. '/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/node_modules/three/build/three.module.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/three` if it exists or add a new declaration (.d.ts) file containing `declare module 'three';` [plugin angular-compiler]
+
+    src/app/ninja3d.component.ts:10:23:
+      10 │ import * as THREE from 'three';
+         ╵                        ~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.450 seconds]
+
+▲ [WARNING] NG8103: The `*ngIf` directive was used in the template, but neither the `NgIf` directive nor the `CommonModule` was imported. Use Angular's built-in control flow @if or make sure that either the `NgIf` directive or the `CommonModule` is included in the `@Component.imports` array of this component. [plugin angular-compiler]
+
+    src/app/app.component.html:43:43:
+      43 │       <span class="sticky-animate streak" *ngIf="streakActive">
+         ╵                                            ~~~~
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.component.ts:9:15:
+      9 │   templateUrl: './app.component.html',
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~
+
+
+▲ [WARNING] NG8103: The `*ngIf` directive was used in the template, but neither the `NgIf` directive nor the `CommonModule` was imported. Use Angular's built-in control flow @if or make sure that either the `NgIf` directive or the `CommonModule` is included in the `@Component.imports` array of this component. [plugin angular-compiler]
+
+    src/app/app.component.html:46:45:
+      46 │       <span class="sticky-animate confetti" *ngIf="showConfetti">
+         ╵                                              ~~~~
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.component.ts:9:15:
+      9 │   templateUrl: './app.component.html',
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS7016: Could not find a declaration file for module 'three'. '/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/node_modules/three/build/three.module.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/three` if it exists or add a new declaration (.d.ts) file containing `declare module 'three';` [plugin angular-compiler]
+
+    src/app/ninja3d.component.ts:10:23:
+      10 │ import * as THREE from 'three';
+         ╵                        ~~~~~~~
+
+
+NG0303: Can't bind to 'ngIf' since it isn't a known property of 'span' (used in the '_AppComponent' component template).
+If the 'ngIf' is an Angular control flow directive, please make sure that either the 'NgIf' directive or the 'CommonModule' is included in the '@Component.imports' of this component.
+NG0303: Can't bind to 'ngIf' since it isn't a known property of 'span' (used in the '_AppComponent' component template).
+If the 'ngIf' is an Angular control flow directive, please make sure that either the 'NgIf' directive or the 'CommonModule' is included in the '@Component.imports' of this component.
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.403 seconds]
+
+▲ [WARNING] NG8103: The `*ngIf` directive was used in the template, but neither the `NgIf` directive nor the `CommonModule` was imported. Use Angular's built-in control flow @if or make sure that either the `NgIf` directive or the `CommonModule` is included in the `@Component.imports` array of this component. [plugin angular-compiler]
+
+    src/app/app.component.html:43:43:
+      43 │       <span class="sticky-animate streak" *ngIf="streakActive">
+         ╵                                            ~~~~
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.component.ts:9:15:
+      9 │   templateUrl: './app.component.html',
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~
+
+
+▲ [WARNING] NG8103: The `*ngIf` directive was used in the template, but neither the `NgIf` directive nor the `CommonModule` was imported. Use Angular's built-in control flow @if or make sure that either the `NgIf` directive or the `CommonModule` is included in the `@Component.imports` array of this component. [plugin angular-compiler]
+
+    src/app/app.component.html:46:45:
+      46 │       <span class="sticky-animate confetti" *ngIf="showConfetti">
+         ╵                                              ~~~~
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.component.ts:9:15:
+      9 │   templateUrl: './app.component.html',
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS7016: Could not find a declaration file for module 'three'. '/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/node_modules/three/build/three.module.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/three` if it exists or add a new declaration (.d.ts) file containing `declare module 'three';` [plugin angular-compiler]
+
+    src/app/ninja3d.component.ts:10:23:
+      10 │ import * as THREE from 'three';
+         ╵                        ~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.275 seconds]
+
+▲ [WARNING] NG8103: The `*ngIf` directive was used in the template, but neither the `NgIf` directive nor the `CommonModule` was imported. Use Angular's built-in control flow @if or make sure that either the `NgIf` directive or the `CommonModule` is included in the `@Component.imports` array of this component. [plugin angular-compiler]
+
+    src/app/app.component.html:43:43:
+      43 │       <span class="sticky-animate streak" *ngIf="streakActive">
+         ╵                                            ~~~~
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.component.ts:9:15:
+      9 │   templateUrl: './app.component.html',
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~
+
+
+▲ [WARNING] NG8103: The `*ngIf` directive was used in the template, but neither the `NgIf` directive nor the `CommonModule` was imported. Use Angular's built-in control flow @if or make sure that either the `NgIf` directive or the `CommonModule` is included in the `@Component.imports` array of this component. [plugin angular-compiler]
+
+    src/app/app.component.html:46:45:
+      46 │       <span class="sticky-animate confetti" *ngIf="showConfetti">
+         ╵                                              ~~~~
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.component.ts:9:15:
+      9 │   templateUrl: './app.component.html',
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS7016: Could not find a declaration file for module 'three'. '/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/node_modules/three/build/three.module.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/three` if it exists or add a new declaration (.d.ts) file containing `declare module 'three';` [plugin angular-compiler]
+
+    src/app/ninja3d.component.ts:10:23:
+      10 │ import * as THREE from 'three';
+         ╵                        ~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.301 seconds]
+
+▲ [WARNING] NG8103: The `*ngIf` directive was used in the template, but neither the `NgIf` directive nor the `CommonModule` was imported. Use Angular's built-in control flow @if or make sure that either the `NgIf` directive or the `CommonModule` is included in the `@Component.imports` array of this component. [plugin angular-compiler]
+
+    src/app/app.component.html:43:43:
+      43 │       <span class="sticky-animate streak" *ngIf="streakActive">
+         ╵                                            ~~~~
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.component.ts:9:15:
+      9 │   templateUrl: './app.component.html',
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~
+
+
+▲ [WARNING] NG8103: The `*ngIf` directive was used in the template, but neither the `NgIf` directive nor the `CommonModule` was imported. Use Angular's built-in control flow @if or make sure that either the `NgIf` directive or the `CommonModule` is included in the `@Component.imports` array of this component. [plugin angular-compiler]
+
+    src/app/app.component.html:46:45:
+      46 │       <span class="sticky-animate confetti" *ngIf="showConfetti">
+         ╵                                              ~~~~
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.component.ts:9:15:
+      9 │   templateUrl: './app.component.html',
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS7016: Could not find a declaration file for module 'three'. '/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/node_modules/three/build/three.module.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/three` if it exists or add a new declaration (.d.ts) file containing `declare module 'three';` [plugin angular-compiler]
+
+    src/app/ninja3d.component.ts:10:23:
+      10 │ import * as THREE from 'three';
+         ╵                        ~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.335 seconds]
+
+▲ [WARNING] NG8103: The `*ngIf` directive was used in the template, but neither the `NgIf` directive nor the `CommonModule` was imported. Use Angular's built-in control flow @if or make sure that either the `NgIf` directive or the `CommonModule` is included in the `@Component.imports` array of this component. [plugin angular-compiler]
+
+    src/app/app.component.html:43:43:
+      43 │       <span class="sticky-animate streak" *ngIf="streakActive">
+         ╵                                            ~~~~
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.component.ts:9:15:
+      9 │   templateUrl: './app.component.html',
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~
+
+
+▲ [WARNING] NG8103: The `*ngIf` directive was used in the template, but neither the `NgIf` directive nor the `CommonModule` was imported. Use Angular's built-in control flow @if or make sure that either the `NgIf` directive or the `CommonModule` is included in the `@Component.imports` array of this component. [plugin angular-compiler]
+
+    src/app/app.component.html:46:45:
+      46 │       <span class="sticky-animate confetti" *ngIf="showConfetti">
+         ╵                                              ~~~~
+
+  Error occurs in the template of component AppComponent.
+
+    src/app/app.component.ts:9:15:
+      9 │   templateUrl: './app.component.html',
+        ╵                ~~~~~~~~~~~~~~~~~~~~~~
+
+
+✘ [ERROR] TS7016: Could not find a declaration file for module 'three'. '/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/node_modules/three/build/three.module.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/three` if it exists or add a new declaration (.d.ts) file containing `declare module 'three';` [plugin angular-compiler]
+
+    src/app/ninja3d.component.ts:10:23:
+      10 │ import * as THREE from 'three';
+         ╵                        ~~~~~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Application bundle generation failed. [0.506 seconds]
+
+✘ [ERROR] TS7016: Could not find a declaration file for module 'three'. '/home/kavia/workspace/code-generation/codequest-37920-0272bf00/codequest_frontend/node_modules/three/build/three.module.js' implicitly has an 'any' type.
+  Try `npm i --save-dev @types/three` if it exists or add a new declaration (.d.ts) file containing `declare module 'three';` [plugin angular-compiler]
+
+    src/app/ninja3d.component.ts:10:23:
+      10 │ import * as THREE from 'three';
+         ╵                        ~~~~~~~
+
+

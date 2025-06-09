@@ -80,6 +80,17 @@
   gap: 2.5vw;
 }
 
+.ninja-hero-wrap {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: .8em;
+  margin-top: .6em;
+  z-index: 3;
+  position: relative;
+}
+
 .dashboard-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
