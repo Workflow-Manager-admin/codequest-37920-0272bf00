@@ -50,15 +50,13 @@ export class AppComponent implements AfterViewInit {
   }
 
   // PUBLIC_INTERFACE
-  onDashboardActionClick(_ev?: Event, targetSelector?: string) {
+  onDashboardActionClick(targetSelector?: string) {
     // Defensive: SSR/platform check
     if (typeof globalThis === 'undefined' || !globalThis.document) return;
     if (this.isNinjaBusy) return; // Prevent double-trigger
 
     let targetEl: HTMLElement | null = null;
-    if (_ev && _ev.currentTarget) {
-      targetEl = _ev.currentTarget as HTMLElement;
-    } else if (targetSelector) {
+    if (targetSelector) {
       targetEl = globalThis.document.querySelector(targetSelector) as HTMLElement | null;
     }
 
@@ -147,9 +145,9 @@ export class AppComponent implements AfterViewInit {
       if (!el) return;
       el.style.cursor = "pointer";
       // Remove pre-existing listener to avoid duplicates
-      el.removeEventListener('click', (ev) => {});
+      el.removeEventListener('click', () => {});
       el.addEventListener('click', () => {
-        this.onDashboardActionClick(undefined, sel);
+        this.onDashboardActionClick(sel);
       }, { passive: false });
     });
   }
