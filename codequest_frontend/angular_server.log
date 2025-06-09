@@ -9,20 +9,20 @@ The "disableHostCheck" option will not be used because it is not supported by th
 Browser bundles     
 Initial chunk files  | Names            |  Raw size
 polyfills.js         | polyfills        |  90.20 kB | 
-main.js              | main             |  42.23 kB | 
+main.js              | main             |  42.49 kB | 
 styles.css           | styles           |   1.58 kB | 
 
-                     | Initial total    | 134.01 kB
+                     | Initial total    | 134.28 kB
 
 
 Server bundles      
 Initial chunk files  | Names            |  Raw size
 polyfills.server.mjs | polyfills.server | 572.91 kB | 
-chunk-AA4FRRZO.mjs   | -                |  42.67 kB | 
+chunk-4PU5S5HZ.mjs   | -                |  42.93 kB | 
 server.mjs           | server           |   1.39 kB | 
 main.server.mjs      | main.server      | 800 bytes | 
 
-Application bundle generation complete. [3.257 seconds]
+Application bundle generation complete. [3.026 seconds]
 
 Watch mode enabled. Watching for file changes...
 NOTE: Raw file sizes do not reflect development server per-request transformations.
@@ -30,17 +30,201 @@ NOTE: Raw file sizes do not reflect development server per-request transformatio
   ➜  Network: http://172.17.0.2:3000/
 ❯ Changes detected. Rebuilding...
 ✔ Changes detected. Rebuilding...
-Browser bundles    
-Initial chunk files | Names       |  Raw size
-main.js             | main        |  42.49 kB | 
+Application bundle generation failed. [0.743 seconds]
+
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/app.component.ts:92:17:
+      92 │       let grad = ctx.createLinearGradient(
+         ╵                  ~~~
 
 
-Server bundles     
-Initial chunk files | Names       |  Raw size
-chunk-4PU5S5HZ.mjs  | -           |  42.93 kB | 
-server.mjs          | server      |   1.39 kB | 
-main.server.mjs     | main.server | 800 bytes | 
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
 
-Application bundle generation complete. [0.635 seconds]
+    src/app/app.component.ts:102:6:
+      102 │       ctx.fillStyle = grad;
+          ╵       ~~~
+
+
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/app.component.ts:103:6:
+      103 │       ctx.fillRect(0,0,w,h);
+          ╵       ~~~
+
+
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/app.component.ts:111:8:
+      111 │         ctx.globalAlpha = 0.13+alpha*0.83;
+          ╵         ~~~
+
+
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/app.component.ts:112:8:
+      112 │         ctx.beginPath();
+          ╵         ~~~
+
+
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/app.component.ts:113:8:
+      113 │         ctx.arc(star.x, star.y, star.r, 0, Math.PI*2, false);
+          ╵         ~~~
+
+
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/app.component.ts:114:8:
+      114 │         ctx.closePath();
+          ╵         ~~~
+
+
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/app.component.ts:115:8:
+      115 │         ctx.fillStyle = "#fff";
+          ╵         ~~~
+
+
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/app.component.ts:116:8:
+      116 │         ctx.shadowColor = (star.r>1.65?"#4ffcffb3":"#eef7fcbb");
+          ╵         ~~~
+
+
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/app.component.ts:117:8:
+      117 │         ctx.shadowBlur = star.r*7.9;
+          ╵         ~~~
+
+
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/app.component.ts:118:8:
+      118 │         ctx.fill();
+          ╵         ~~~
+
+
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/app.component.ts:127:6:
+      127 │       ctx.globalAlpha = 1;
+          ╵       ~~~
+
+
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/app.component.ts:130:6:
+      130 │       ctx.save();
+          ╵       ~~~
+
+
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/app.component.ts:131:6:
+      131 │       ctx.globalAlpha = 0.18 + 0.11*Math.sin(ts/4000); // subtle ...
+          ╵       ~~~
+
+
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/app.component.ts:132:6:
+      132 │       ctx.beginPath();
+          ╵       ~~~
+
+
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/app.component.ts:136:6:
+      136 │       ctx.moveTo(0, cloud_mid);
+          ╵       ~~~
+
+
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/app.component.ts:138:8:
+      138 │         ctx.lineTo(x, cloud_mid + Math.sin((x+ts/11)/waveLen)*amp...
+          ╵         ~~~
+
+
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/app.component.ts:140:6:
+      140 │       ctx.lineTo(w+10, h);
+          ╵       ~~~
+
+
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/app.component.ts:141:6:
+      141 │       ctx.lineTo(-10, h);
+          ╵       ~~~
+
+
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/app.component.ts:142:6:
+      142 │       ctx.closePath();
+          ╵       ~~~
+
+
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/app.component.ts:143:6:
+      143 │       ctx.fillStyle = "#2c284050";
+          ╵       ~~~
+
+
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/app.component.ts:144:6:
+      144 │       ctx.filter = "blur(3.3px)";
+          ╵       ~~~
+
+
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/app.component.ts:145:6:
+      145 │       ctx.fill();
+          ╵       ~~~
+
+
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/app.component.ts:146:6:
+      146 │       ctx.filter = "none";
+          ╵       ~~~
+
+
+✘ [ERROR] TS18047: 'ctx' is possibly 'null'. [plugin angular-compiler]
+
+    src/app/app.component.ts:147:6:
+      147 │       ctx.restore();
+          ╵       ~~~
+
+
+❯ Changes detected. Rebuilding...
+✔ Changes detected. Rebuilding...
+Browser bundles     
+Initial chunk files  | Names            |  Raw size
+polyfills.js         | polyfills        |  90.20 kB | 
+main.js              | main             |  44.09 kB | 
+styles.css           | styles           |   1.58 kB | 
+
+                     | Initial total    | 135.88 kB
+
+
+Server bundles      
+Initial chunk files  | Names            |  Raw size
+polyfills.server.mjs | polyfills.server | 572.91 kB | 
+chunk-RKD4UOXY.mjs   | -                |  44.53 kB | 
+server.mjs           | server           |   1.39 kB | 
+main.server.mjs      | main.server      | 800 bytes | 
+
+Application bundle generation complete. [0.372 seconds]
 
 Page reload sent to client(s).

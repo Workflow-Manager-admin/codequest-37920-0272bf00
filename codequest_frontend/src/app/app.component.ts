@@ -33,80 +33,151 @@ export class AppComponent implements AfterViewInit {
 
   // After view init: draw night sky and handle parallax for shadow ninja 
   ngAfterViewInit(): void {
-    this.initNightSkyStars();
+    this.initAnimatedNightSky();
     this.initNinjaParallax();
   }
 
   /**
-   * Draw and animate stars in the #night-sky-canvas above dashboard
+   * Draw and animate the night sky with moving gradient and starfield,
+   * placing both effects into the background canvas for immersive dynamism.
    */
-  private initNightSkyStars(): void {
-    // Use globalThis for browser APIs for SSR safety
+  private initAnimatedNightSky(): void {
+    // SSR safety
     if (typeof globalThis === 'undefined' || !globalThis.document) return;
     const canvas = globalThis.document.getElementById('night-sky-canvas') as HTMLCanvasElement | null;
     if (!canvas) return;
-
     const ctx = canvas.getContext('2d');
     if (!ctx) return;
 
-    const devicePixelRatio = (typeof globalThis.devicePixelRatio === 'number' ? globalThis.devicePixelRatio : 1);
-    let w = (typeof globalThis.innerWidth === 'number' ? globalThis.innerWidth : 1200) * devicePixelRatio;
-    let h = (typeof globalThis.innerHeight === 'number' ? globalThis.innerHeight : 900) * devicePixelRatio;
-    canvas.width = w;
-    canvas.height = h;
-    canvas.style.width = (typeof globalThis.innerWidth === 'number' ? globalThis.innerWidth : 1200) + "px";
-    canvas.style.height = (typeof globalThis.innerHeight === 'number' ? globalThis.innerHeight : 900) + "px";
-    const starCount = Math.floor(w * h / 17000) + 48;
-    let stars: {x:number, y:number, r:number, spd:number, tw:number, t0:number}[] = []; // CORRECT 'int' to 'number'
+    // Convenience helpers for device size detection
+    const getSize = () => {
+      const dpr = (typeof globalThis.devicePixelRatio === 'number' ? globalThis.devicePixelRatio : 1);
+      return {
+        w: ((typeof globalThis.innerWidth === 'number' ? globalThis.innerWidth : 1200) * dpr) || 1200,
+        h: ((typeof globalThis.innerHeight === 'number' ? globalThis.innerHeight : 900) * dpr) || 900,
+        dpr
+      }
+    };
+
+    // Star storage and gradient state
+    let { w, h, dpr } = getSize();
+    canvas.width = w; canvas.height = h;
+    canvas.style.width = (w / dpr) + "px";
+    canvas.style.height = (h / dpr) + "px";
+    let starCount = Math.floor(w * h / 19000) + 54;
+    let stars: {x:number, y:number, r:number, spd:number, tw:number, t0:number}[] = [];
     for (let i = 0; i < starCount; ++i) {
       stars.push({
         x: Math.random() * w,
         y: Math.random() * h,
-        r: Math.random()*1.2 + 0.7 + Math.pow(Math.random(),1.7)*1.6,
-        spd: 0.07 + Math.pow(Math.random(), 2.6) * 0.30,
-        tw: (Math.random()*0.85+0.12), // twinkle factor
-        t0: Math.random() * 100
+        r: Math.random()*1.35 + 0.85 + Math.pow(Math.random(),1.6)*1.5,
+        spd: 0.06 + Math.pow(Math.random(), 2.1) * 0.25,
+        tw: (Math.random()*0.81+0.16),
+        t0: Math.random() * 90
       });
     }
-    function animateStars(ts: number) {
+
+    // Sky gradient parameters (move horizontally to simulate cloud drift)
+    let gradOffset = 0;
+    let gradVel = 0.12; // px per frame drift
+
+    // Draw frame: gradient, stars, subtle clouds
+    function drawFrame(ts: number) {
+      // Defensive: If ctx is missing, abort the frame (TS strict null safety)
       if (!ctx) return;
-      ctx.clearRect(0,0,w,h);
+
+      // Animate gradient offset for "moving sky"
+      gradOffset += gradVel + 0.7*Math.sin(ts/3900);
+      // To avoid overflow
+      if (gradOffset > w*0.4) gradOffset = -w*0.4;
+
+      // Draw animated night gradient (deep blue, purple, navy, parallax)
+      const grad = ctx.createLinearGradient(
+        gradOffset, 0,
+        w * 0.9 + gradOffset, h * (0.62 + 0.11 * Math.cos(ts/7000))
+      );
+      grad.addColorStop(0, "#0f1327");
+      grad.addColorStop(0.19, "#13213D");
+      grad.addColorStop(0.37, "#232f5d");
+      grad.addColorStop(0.49 + (Math.sin(ts/3700)*0.07), "#311a35");
+      grad.addColorStop(0.72, "#1c2037");
+      grad.addColorStop(1, "#101121");
+      ctx.fillStyle = grad;
+      ctx.fillRect(0, 0, w, h);
+
+      // Draw stars
       for (let i = 0; i < stars.length; ++i) {
-        let star = stars[i];
-        // twinkle math: 0.45..1.1 opacity
-        let t = ((ts/1000+star.t0)*star.tw*1.8)%Math.PI;
-        let alpha = 0.45 + 0.55*Math.abs(Math.cos(t));
-        ctx.globalAlpha = 0.18+alpha*0.76;
+        const star = stars[i];
+        // twinkle math with more variety, more randomness
+        const t = ((ts/870 + star.t0) * star.tw * 2.5) % Math.PI;
+        const alpha = 0.41 + 0.59 * Math.abs(Math.cos(t)) * (0.83 + Math.sin(ts/2500 + star.t0));
+        ctx.globalAlpha = 0.13 + alpha * 0.83;
         ctx.beginPath();
-        ctx.arc(star.x, star.y, star.r, 0, Math.PI*2, false);
+        ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2, false);
         ctx.closePath();
         ctx.fillStyle = "#fff";
-        ctx.shadowColor = (star.r>1.45?"#00fffbe7":"#fff9");
-        ctx.shadowBlur = star.r*7.2;
+        ctx.shadowColor = (star.r > 1.65 ? "#4ffcffb3" : "#eef7fcbb");
+        ctx.shadowBlur = star.r * 7.9;
         ctx.fill();
-        // drift stars down a bit
-        star.y += star.spd;
+        // drift stars in gentle "parallax" (y, with subpixel phase so all stars don't move in sync)
+        const ydrift = star.spd * (1.1 + Math.sin(ts/3100 + i*0.13)*0.34);
+        star.y += ydrift;
         if (star.y > h) {
-          star.y = -star.r*2.2;
-          star.x = Math.random()*w;
+          star.y = -star.r*2.1;
+          star.x = Math.random() * w;
         }
       }
       ctx.globalAlpha = 1;
+
+      // Very subtle moving cloud overlay using semi-transparent sine wave (simulate clouds)
+      ctx.save();
+      ctx.globalAlpha = 0.18 + 0.11 * Math.sin(ts/4000); // subtle opacity
+      ctx.beginPath();
+      const cloud_mid = h * (0.23 + Math.sin(ts/8000)*0.04);
+      const amp = 18 + 10 * Math.sin(ts/5080); // amplitude
+      const waveLen = 220 + 80 * Math.sin(ts/6000);
+      ctx.moveTo(0, cloud_mid);
+      for (let x = 0; x <= w+5; x += 7) {
+        ctx.lineTo(x, cloud_mid + Math.sin((x+ts/11)/waveLen)*amp + 7*Math.cos((x+ts/8)/112));
+      }
+      ctx.lineTo(w+10, h);
+      ctx.lineTo(-10, h);
+      ctx.closePath();
+      ctx.fillStyle = "#2c284050";
+      ctx.filter = "blur(3.3px)";
+      ctx.fill();
+      ctx.filter = "none";
+      ctx.restore();
+
+      // Request next frame
       if (typeof globalThis.requestAnimationFrame === 'function') {
-        globalThis.requestAnimationFrame(animateStars);
+        globalThis.requestAnimationFrame(drawFrame);
       }
     }
-    animateStars(0);
+    drawFrame(0);
 
-    // Redraw canvas on resize (mobile, orientation change, SSR safe)
+    // Responsive: redraw and refill on resize
     if (typeof globalThis.addEventListener === 'function') {
       globalThis.addEventListener('resize', () => {
-        let w = (typeof globalThis.innerWidth === 'number' ? globalThis.innerWidth : 1200) * devicePixelRatio;
-        let h = (typeof globalThis.innerHeight === 'number' ? globalThis.innerHeight : 900) * devicePixelRatio;
+        let newSize = getSize();
+        w = newSize.w; h = newSize.h; dpr = newSize.dpr;
         canvas.width = w;
         canvas.height = h;
-        canvas.style.width = (typeof globalThis.innerWidth === 'number' ? globalThis.innerWidth : 1200) + "px";
-        canvas.style.height = (typeof globalThis.innerHeight === 'number' ? globalThis.innerHeight : 900) + "px";
+        canvas.style.width = (w/dpr) + "px";
+        canvas.style.height = (h/dpr) + "px";
+        // Reinit stars for new size
+        starCount = Math.floor(w * h / 19000) + 54;
+        stars = [];
+        for (let i = 0; i < starCount; ++i) {
+          stars.push({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            r: Math.random()*1.35 + 0.85 + Math.pow(Math.random(),1.6)*1.5,
+            spd: 0.06 + Math.pow(Math.random(), 2.1) * 0.25,
+            tw: (Math.random()*0.81+0.16),
+            t0: Math.random() * 90
+          });
+        }
       });
     }
   }
