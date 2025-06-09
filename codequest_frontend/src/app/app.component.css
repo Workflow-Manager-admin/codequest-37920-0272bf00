@@ -1,36 +1,121 @@
-/* Glassmorphism dashboard styles for CodeQuest */
+/* ===== GAMING NIGHT THEME for CodeQuest DASHBOARD ===== */
 
+/* Night-sky CSS variables with deep neon, glass, neon accents & intensity */
 :root {
-  --primary: #1F2937;
-  --secondary: #9CA3AF;
-  --accent: #2d2e2f;
+  --primary: #151822;
+  --secondary: #263346;
+  --accent: #181a20;
 
-  --neon: #00f2fe;
-  --neon-pink: #ed21fa;
-  --neon-red: #fb3640;
-  --neon-green: #3fffa8;
-  --glassy-bg: rgba(31, 41, 55, 0.45);
-  --frosted-bg: rgba(156, 163, 175, 0.1);
-  --blur: 18px;
-  --dark-bg: #181a20;
-  --border: rgba(255,255,255,0.13);
-  --shadow: 0 8px 24px 0 rgba(0,0,0,0.14);
-  --card-radius: 1.6rem;
-  --font-title: 'Inter Tight', 'Segoe UI', Arial, sans-serif;
+  --neon: #00ffe9;
+  --neon-pink: #ff2efc;
+  --neon-red: #fd2451;
+  --neon-green: #31ffd5;
+  --glassy-bg: rgba(24, 22, 39, 0.52);
+  --frosted-bg: rgba(38, 51, 70, 0.17);
+  --blur: 21px;
+  --dark-bg: #0f111a;
+  --border: rgba(120,255,245,0.13);
+  --shadow: 0 8px 40px 0 rgba(0,0,0,0.21);
+  --card-radius: 1.7rem;
+  --font-title: 'Inter Tight', 'Oxanium', 'Segoe UI', Arial, sans-serif;
 }
+
+/* Night sky with animated stars and moving shadow ninja using before/after */
 .app-background {
   min-height: 100vh;
-  background: linear-gradient(135deg, var(--primary), var(--secondary) 100%);
-  color: #f1f3fa;
+  position: relative;
+  overflow-x: hidden;
+  background: linear-gradient(130deg, var(--primary) 42%, #13152a 90%) !important;
+  color: #eef6ff;
   font-family: var(--font-title);
   transition: background 0.3s;
+  isolation: isolate;
+}
+
+.app-background::before {
+  /* Moving large shadow ninja (responsive) */
+  content: "";
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  z-index: 0;
+  background: url("/assets/shadow_ninja_bg.svg") center bottom/contain no-repeat;
+  opacity: 0.13;
+  pointer-events: none;
+  mix-blend-mode: lighten;
+  transition: opacity 0.4s;
+  animation: ninja-bg-float 18s cubic-bezier(0.34,0.81,0.5,1) infinite alternate;
+}
+@media (max-width: 700px) {
+  .app-background::before {
+    background-size: 160% auto;
+    bottom: -10vw;
+    opacity: 0.09;
+  }
+}
+
+/* Animated night sky layer */
+.app-background::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse at 60% 18%, #2c437cbb 0%, transparent 75%) 0 0/100vw 100vh no-repeat,
+    linear-gradient(180deg, #0f111a 80%, #181a38c2 100%) 0 0/100vw 100vh no-repeat,
+    transparent;
+  /* Add stars with an SVG, using filter for twinkle effect */
+  pointer-events: none;
+}
+
+.night-sky-stars {
+  position: fixed;
+  top:0; left: 0; width: 100vw; height: 100vh;
+  pointer-events: none;
+  z-index: 2;
+  mix-blend-mode: screen;
+}
+@media (max-width: 700px) {
+  .night-sky-stars {
+    background-size: 124vw 100vh;
+  }
+}
+
+/* Animate stars - shimmer & drift */
+.star {
+  position: absolute;
+  border-radius: 50%;
+  opacity: .66;
+  background: white;
+  box-shadow: 
+    0 0 4px 1.5px #00fffbaa,
+    0 0 7px 0 #00f2fe66;
+  will-change: opacity, transform;
+  animation: star-twinkle 2.6s infinite, star-drift 48s linear infinite;
+}
+
+@keyframes star-twinkle {
+  0%,100% { opacity: .15; }
+  38% { opacity: .82; }
+  62% { opacity: .31; }
+}
+@keyframes star-drift {
+  from { transform: translateY(0); }
+  to { transform: translateY(40px);}
+}
+
+@keyframes ninja-bg-float {
+  0% { filter: blur(0.2px) drop-shadow(0 10px 22px #0003); }
+  40% { transform: translate(-20px, 0) scale(1.01);}
+  60% { transform: translate(24px, 12px) scale(1.01);}
+  100% { filter: blur(1px) drop-shadow(0 22px 12px #1135), }
 }
 
 /* Dark mode overrides */
 .app-background.dark-mode {
-  background: linear-gradient(120deg, #161922, #222034 70%);
-  color: #eaffff;
+  background: linear-gradient(120deg, #090b12 60%, #202247 100%);
+  color: #e8f7ff;
 }
+
 
 .appbar-glassy {
   display: flex;

@@ -1,0 +1,29 @@
+<svg width="920" height="780" viewBox="0 0 920 780" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g opacity="0.82">
+    <!-- Main ninja shadow shape (silhouette only, no color/no stroke, large, soft edges) -->
+    <ellipse cx="470" cy="420" rx="390" ry="310" fill="#000" fill-opacity="0.55" filter="url(#blurmain)"/>
+    <g opacity="0.78">
+      <!-- Body (torso, arms, sword hint)—rough shadow only for parallax effect -->
+      <ellipse cx="470" cy="372" rx="178" ry="213" fill="#000" />
+      <ellipse cx="340" cy="500" rx="56" ry="32" fill="#000"/>
+      <ellipse cx="600" cy="473" rx="58" ry="38" fill="#000"/>
+      <!-- Shadow head (round) -->
+      <ellipse cx="470" cy="222" rx="67" ry="63" fill="#000"/>
+      <!-- Sword shadow (large blur) -->
+      <rect x="738" y="220" width="25" height="330" rx="12" transform="rotate(15 750 220)" fill="#000" fill-opacity="0.5" filter="url(#blur2)"/>
+      <!-- Ninja wraps (scarf, hinting) -->
+      <ellipse cx="380" cy="190" rx="23" ry="11" fill="#000" fill-opacity="0.64"/>
+      <ellipse cx="555" cy="180" rx="22" ry="10" fill="#000" fill-opacity="0.62"/>
+    </g>
+    <!-- Lower shadow -->
+    <ellipse cx="470" cy="675" rx="220" ry="56" fill="#00142c" fill-opacity="0.18"/>
+  </g>
+  <defs>
+    <filter id="blurmain" x="-110" y="48" width="1160" height="749" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="27"/>
+    </filter>
+    <filter id="blur2" x="730" y="216" width="41" height="337" filterUnits="userSpaceOnUse">
+      <feGaussianBlur stdDeviation="7.6"/>
+    </filter>
+  </defs>
+</svg>

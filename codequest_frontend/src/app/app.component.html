@@ -1,71 +1,79 @@
 <div class="app-background" [class.dark-mode]="darkMode">
-  <header class="appbar-glassy">
-    <div class="brand-logo">CodeQuest</div>
-    <button class="theme-toggle-btn" (click)="toggleDarkMode()">
-      <span class="material-symbols-outlined" aria-label="Toggle Theme">
-        {{ darkMode ? 'light_mode' : 'dark_mode' }}
-      </span>
-    </button>
-  </header>
+  <!-- Layer for animated stars and giant shadow ninja (canvas, filled from code/app) -->
+  <div id="gaming-theme-layer" style="z-index:0; position:fixed; width:100vw; height:100vh; top:0; left:0; overflow:hidden; pointer-events:none;">
+    <canvas id="night-sky-canvas" class="night-sky-stars"></canvas>
+    <!-- The ninja SVG is injected as a BG image with parallax in CSS; fallback inlined if loading fails -->
+  </div>
+  
+  <div style="position:relative; z-index:3;">
+    <header class="appbar-glassy">
+      <div class="brand-logo">CodeQuest</div>
+      <button class="theme-toggle-btn" (click)="toggleDarkMode()">
+        <span class="material-symbols-outlined" aria-label="Toggle Theme">
+          {{ darkMode ? 'light_mode' : 'dark_mode' }}
+        </span>
+      </button>
+    </header>
 
-  <main class="dashboard-container">
-    <section class="ninja-hero-wrap">
-      <app-ninjacut></app-ninjacut>
-    </section>
+    <main class="dashboard-container">
+      <section class="ninja-hero-wrap">
+        <app-ninjacut></app-ninjacut>
+      </section>
 
-    <section class="dashboard-cards">
-      <div class="glass-card neon-border" id="prs-card">
-        <h2>Your PRs</h2>
-        <div class="card-value">{{ prsCount }}</div>
-        <p>Pull requests from connected repos</p>
-      </div>
+      <section class="dashboard-cards">
+        <div class="glass-card neon-border" id="prs-card">
+          <h2>Your PRs</h2>
+          <div class="card-value">{{ prsCount }}</div>
+          <p>Pull requests from connected repos</p>
+        </div>
 
-      <div class="glass-card neon-border accent" id="points-card">
-        <h2>Your Points</h2>
-        <div class="card-value points">{{ points }}</div>
-        <p>Total earned via reviews & contributions</p>
-      </div>
+        <div class="glass-card neon-border accent" id="points-card">
+          <h2>Your Points</h2>
+          <div class="card-value points">{{ points }}</div>
+          <p>Total earned via reviews & contributions</p>
+        </div>
 
-      <div class="glass-card neon-border danger" id="bugs-card">
-        <h2>Bugs Logged</h2>
-        <div class="card-value">{{ bugsLogged }}</div>
-        <p>Peer-reported issues (open/total)</p>
-      </div>
+        <div class="glass-card neon-border danger" id="bugs-card">
+          <h2>Bugs Logged</h2>
+          <div class="card-value">{{ bugsLogged }}</div>
+          <p>Peer-reported issues (open/total)</p>
+        </div>
 
-      <div class="glass-card neon-border redeem" id="redeem-card">
-        <h2>Redeem Now</h2>
-        <div class="card-value"><span class="material-symbols-outlined">shopping_bag</span></div>
-        <p>Exchange points for swags</p>
-      </div>
-    </section>
+        <div class="glass-card neon-border redeem" id="redeem-card">
+          <h2>Redeem Now</h2>
+          <div class="card-value"><span class="material-symbols-outlined">shopping_bag</span></div>
+          <p>Exchange points for swags</p>
+        </div>
+      </section>
 
-    <section class="glass-bar">
-      <span class="sticky-animate streak" *ngIf="streakActive">
-        🔥 Streak on! +{{ streakCount }}
-      </span>
-      <span class="sticky-animate confetti" *ngIf="showConfetti">
-        🎉
-      </span>
-      <span class="tag neon-text">Live</span>
-      <span class="rule-engine-btn">
-        <button class="text-btn neon-hover">Rule Engine</button>
-      </span>
-      <span class="notifications-btn">
-        <button class="icon-btn neon-hover">
-          <span class="material-symbols-outlined">notifications</span>
-        </button>
-      </span>
-    </section>
+      <section class="glass-bar">
+        <span class="sticky-animate streak" *ngIf="streakActive">
+          🔥 Streak on! +{{ streakCount }}
+        </span>
+        <span class="sticky-animate confetti" *ngIf="showConfetti">
+          🎉
+        </span>
+        <span class="tag neon-text">Live</span>
+        <span class="rule-engine-btn">
+          <button class="text-btn neon-hover">Rule Engine</button>
+        </span>
+        <span class="notifications-btn">
+          <button class="icon-btn neon-hover">
+            <span class="material-symbols-outlined">notifications</span>
+          </button>
+        </span>
+      </section>
 
-    <!-- Placeholder router outlet for feature modules -->
-    <router-outlet></router-outlet>
-  </main>
-  <footer class="app-footer glass-bar">
-    <div>© {{ currentYear }} CodeQuest DevArena — <span class="footer-accent">Gamify. Review. Win.</span></div>
-    <nav>
-      <a href="#" class="neon-link">Privacy</a>
-      <a href="#" class="neon-link">Terms</a>
-      <a href="#" class="neon-link">Contact</a>
-    </nav>
-  </footer>
+      <!-- Placeholder router outlet for feature modules -->
+      <router-outlet></router-outlet>
+    </main>
+    <footer class="app-footer glass-bar">
+      <div>© {{ currentYear }} CodeQuest DevArena — <span class="footer-accent">Gamify. Review. Win.</span></div>
+      <nav>
+        <a href="#" class="neon-link">Privacy</a>
+        <a href="#" class="neon-link">Terms</a>
+        <a href="#" class="neon-link">Contact</a>
+      </nav>
+    </footer>
+  </div>
 </div>
